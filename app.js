@@ -471,26 +471,217 @@ function getPlayerByReference(playerReference) {
   )) || null;
 }
 
-function getRandomPlayer() {
-  const players = getSelectedPlayerObjects();
-  return pickRandom(players) || DEFAULT_PLAYERS[0];
+function getRandomPlayer(availablePlayers = getSelectedPlayerObjects()) {
+  const players = Array.isArray(availablePlayers) ? availablePlayers.filter(Boolean) : [];
+  return getRandomArrayItem(players) || DEFAULT_PLAYERS[0];
 }
 
-function getRandomOtherPlayer(currentPlayer) {
+function getRandomOtherPlayer(currentPlayer, availablePlayers = getSelectedPlayerObjects()) {
+  const players = Array.isArray(availablePlayers) ? availablePlayers.filter(Boolean) : [];
   const current = getPlayerByReference(currentPlayer);
-  const players = getSelectedPlayerObjects().filter((player) => player.id !== (current && current.id));
-  return pickRandom(players) || current || DEFAULT_PLAYERS[0];
+  const candidates = players.filter((player) => player.id !== (current && current.id));
+  return getRandomArrayItem(candidates) || current || players[0] || DEFAULT_PLAYERS[0];
 }
 
-function getRandomTwoPlayers(currentPlayer) {
-  const current = getPlayerByReference(currentPlayer);
-  const first = getRandomOtherPlayer(current);
-  const secondPool = getSelectedPlayerObjects().filter((player) => (
-    player.id !== (current && current.id) && player.id !== first.id
-  ));
-  const second = pickRandom(secondPool) || first;
+function getRandomTwoPlayers(currentPlayer, availablePlayers = getSelectedPlayerObjects()) {
+  const players = Array.isArray(availablePlayers) ? availablePlayers.filter(Boolean) : [];
+  const current = getPlayerByReference(currentPlayer) || getRandomPlayer(players);
+  const first = getRandomOtherPlayer(current, players);
+  const second = getRandomThirdPlayer(current, first, players);
   return [first, second];
 }
+
+function cardNeedsPair(card) {
+  return Boolean(card && typeof card.text === "string" && card.text.includes("{randomPlayer"));
+}
+
+function selectPairForCard(availablePlayers) {
+  const players = Array.isArray(availablePlayers) ? availablePlayers.filter(Boolean) : [];
+
+  if (players.length < 2) {
+    return {
+      player: players[0] || null,
+      randomPlayer: players[0] || null
+    };
+  }
+
+  const orderedPairs = [];
+
+  players.forEach((first) => {
+    players.forEach((second) => {
+      if (first.id === second.id) {
+        return;
+      }
+
+      orderedPairs.push({
+        player: first,
+        randomPlayer: second,
+        category: getPairCategory(first, second),
+        isRareLeraMalePair: isRareLeraMalePair(first, second)
+      });
+    });
+  });
+
+  const allowRareLeraMalePair = Math.random() < 0.01;
+  const filteredPairs = orderedPairs.filter((pair) => (
+    pair.isRareLeraMalePair ? allowRareLeraMalePair : true
+  ));
+  const pairs = filteredPairs.length > 0 ? filteredPairs : orderedPairs;
+  const femaleFemalePairs = pairs.filter((pair) => pair.category === "female_female");
+  const mixedPairs = pairs.filter((pair) => pair.category === "mixed");
+  const maleMalePairs = pairs.filter((pair) => pair.category === "male_male");
+  const categoryWeights = [];
+
+  if (femaleFemalePairs.length > 0) {
+    categoryWeights.push({
+      category: "female_female",
+      weight: 60,
+      pairs: femaleFemalePairs
+    });
+  }
+
+  if (mixedPairs.length > 0) {
+    categoryWeights.push({
+      category: "mixed",
+      weight: 30,
+      pairs: mixedPairs
+    });
+  }
+
+  if (maleMalePairs.length > 0) {
+    categoryWeights.push({
+      category: "male_male",
+      weight: 10,
+      pairs: maleMalePairs
+    });
+  }
+
+  const selectedCategory = getWeightedRandomCategory(categoryWeights);
+  const selectedPair = selectedCategory ? getRandomArrayItem(selectedCategory.pairs) : null;
+  const fallbackPair = getRandomArrayItem(pairs);
+
+  return {
+    player: (selectedPair && selectedPair.player) || (fallbackPair && fallbackPair.player) || players[0],
+    randomPlayer: (selectedPair && selectedPair.randomPlayer) || (fallbackPair && fallbackPair.randomPlayer) || players[1] || players[0]
+  };
+}
+
+function getPairCategory(first, second) {
+  if (first && second && first.gender === "female" && second.gender === "female") {
+    return "female_female";
+  }
+
+  if (first && second && first.gender === "male" && second.gender === "male") {
+    return "male_male";
+  }
+
+  return "mixed";
+}
+
+function isRareLeraMalePair(first, second) {
+  const firstIsLera = first && first.id === "lera";
+  const secondIsLera = second && second.id === "lera";
+
+  if (!firstIsLera && !secondIsLera) {
+    return false;
+  }
+
+  const other = firstIsLera ? second : first;
+
+  if (!other || other.gender !== "male") {
+    return false;
+  }
+
+  if (other.id === "sasha") {
+    return false;
+  }
+
+  return true;
+}
+
+function getWeightedRandomCategory(items) {
+  if (!Array.isArray(items) || !items.length) {
+    return null;
+  }
+
+  const totalWeight = items.reduce((sum, item) => sum + item.weight, 0);
+  let random = Math.random() * totalWeight;
+
+  for (const item of items) {
+    random -= item.weight;
+
+    if (random <= 0) {
+      return item;
+    }
+  }
+
+  return items[items.length - 1];
+}
+
+function getRandomArrayItem(items) {
+  if (!Array.isArray(items) || !items.length) {
+    return null;
+  }
+
+  return items[Math.floor(Math.random() * items.length)];
+}
+
+function getRandomThirdPlayer(player, randomPlayer, availablePlayers) {
+  const players = Array.isArray(availablePlayers) ? availablePlayers.filter(Boolean) : [];
+  const excludedIds = new Set([
+    player && player.id,
+    randomPlayer && randomPlayer.id
+  ]);
+  const candidates = players.filter((candidate) => !excludedIds.has(candidate.id));
+
+  if (candidates.length > 0) {
+    return getRandomArrayItem(candidates);
+  }
+
+  return randomPlayer || player || players[0] || DEFAULT_PLAYERS[0];
+}
+
+function debugPairDistribution(iterations = 1000) {
+  const availablePlayers = getSelectedPlayerObjects();
+  const stats = {
+    female_female: 0,
+    mixed: 0,
+    male_male: 0,
+    lera_with_sasha: 0,
+    lera_with_other_male: 0,
+    lera_with_female: 0
+  };
+
+  for (let index = 0; index < iterations; index += 1) {
+    const pair = selectPairForCard(availablePlayers);
+
+    if (!pair.player || !pair.randomPlayer) {
+      continue;
+    }
+
+    const category = getPairCategory(pair.player, pair.randomPlayer);
+    stats[category] += 1;
+
+    const includesLera = pair.player.id === "lera" || pair.randomPlayer.id === "lera";
+
+    if (includesLera) {
+      const other = pair.player.id === "lera" ? pair.randomPlayer : pair.player;
+
+      if (other.id === "sasha") {
+        stats.lera_with_sasha += 1;
+      } else if (other.gender === "female") {
+        stats.lera_with_female += 1;
+      } else if (other.gender === "male") {
+        stats.lera_with_other_male += 1;
+      }
+    }
+  }
+
+  console.table(stats);
+  return stats;
+}
+
+window.debugPairDistribution = debugPairDistribution;
 
 function createPlayerFromName(name, gender) {
   const cleanName = String(name || "").trim();
@@ -990,8 +1181,23 @@ function registerServiceWorker() {
 }
 
 function prepareCardForDisplay(card, preferredPlayer) {
-  const activePlayer = getPlayerByReference(preferredPlayer) || getRandomPlayer();
-  const [randomPlayer, randomPlayer2] = getRandomTwoPlayers(activePlayer);
+  const availablePlayers = getSelectedPlayerObjects();
+  let activePlayer;
+  let randomPlayer;
+
+  if (preferredPlayer) {
+    activePlayer = getPlayerByReference(preferredPlayer) || getRandomPlayer(availablePlayers);
+    randomPlayer = getRandomOtherPlayer(activePlayer, availablePlayers);
+  } else if (cardNeedsPair(card)) {
+    const pair = selectPairForCard(availablePlayers);
+    activePlayer = pair.player || getRandomPlayer(availablePlayers);
+    randomPlayer = pair.randomPlayer || getRandomOtherPlayer(activePlayer, availablePlayers);
+  } else {
+    activePlayer = getRandomPlayer(availablePlayers);
+    randomPlayer = getRandomOtherPlayer(activePlayer, availablePlayers);
+  }
+
+  const randomPlayer2 = getRandomThirdPlayer(activePlayer, randomPlayer, availablePlayers);
   const resolvedText = resolveCardTemplate(card.text, {
     player: getPlayerForms(activePlayer),
     randomPlayer: getPlayerForms(randomPlayer),
@@ -1195,11 +1401,7 @@ function writeStorage(key, value) {
 }
 
 function pickRandom(items) {
-  if (!items.length) {
-    return null;
-  }
-
-  return items[Math.floor(Math.random() * items.length)];
+  return getRandomArrayItem(items);
 }
 
 function escapeHtml(value) {
