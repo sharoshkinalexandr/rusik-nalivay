@@ -205,6 +205,8 @@ button:disabled {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 8px;
   min-height: 62px;
   padding: 0 14px;
   border: 1px solid var(--line);
@@ -212,6 +214,17 @@ button:disabled {
   background: rgba(21, 21, 28, 0.86);
   color: var(--text);
   font-weight: 800;
+}
+
+.player-check {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+
+.player-check span {
+  overflow-wrap: anywhere;
 }
 
 .player-option input {
@@ -224,6 +237,57 @@ button:disabled {
 .player-option:has(input:checked) {
   border-color: rgba(230, 57, 70, 0.72);
   background: rgba(230, 57, 70, 0.14);
+}
+
+.custom-player-box {
+  display: grid;
+  gap: 10px;
+  margin-top: 4px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.custom-player-box h3 {
+  margin: 0;
+  font-size: 1.12rem;
+}
+
+.custom-player-box input,
+.custom-player-box select {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius);
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.custom-player-box select option {
+  color: #111111;
+}
+
+.custom-player-message {
+  min-height: 20px;
+  margin: 0;
+  color: var(--gold);
+  font-size: 0.9rem;
+}
+
+.remove-player-button {
+  width: auto;
+  min-height: 40px;
+  padding: 0 10px;
+  border: 1px solid rgba(230, 57, 70, 0.35);
+  border-radius: var(--radius);
+  background: rgba(230, 57, 70, 0.12);
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 800;
+  flex: 0 0 auto;
 }
 
 .card-shell {
