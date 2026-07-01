@@ -233,6 +233,7 @@ function renderGameScreen(card) {
           <div class="card-type">${escapeHtml(CARD_TYPE_LABELS[card.type] || card.type)}</div>
           <h1 class="card-title">${escapeHtml(card.title)}</h1>
         </div>
+        ${renderDrinkNotice(card)}
         <p class="card-text">${escapeHtml(card.resolvedText)}</p>
         ${card.timer ? renderTimerMarkup(card.timer) : ""}
       </article>
@@ -271,6 +272,7 @@ function renderPenaltyScreen(card) {
           <div class="card-type">${escapeHtml(CARD_TYPE_LABELS[card.type] || card.type)}</div>
           <h1 class="card-title">${escapeHtml(card.title)}</h1>
         </div>
+        ${renderDrinkNotice(card)}
         <p class="card-text">${escapeHtml(card.resolvedText)}</p>
         ${card.timer ? renderTimerMarkup(card.timer) : ""}
       </article>
@@ -1313,6 +1315,11 @@ function setupTimerForCard(card) {
   timerInitial = card.timer || 0;
   timerRemaining = timerInitial;
   timerDone = false;
+}
+
+function renderDrinkNotice(card) {
+  const playerName = card && card.activePlayer ? card.activePlayer : "";
+  return `<div class="drink-notice">Перед выполнением: ${escapeHtml(playerName)} делает глоток.</div>`;
 }
 
 function renderTimerMarkup(seconds) {

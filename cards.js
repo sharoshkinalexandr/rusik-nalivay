@@ -125,350 +125,350 @@ const ACTION_CARDS_001_050 = [
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Покажи с {randomPlayer.inst}, как нужно страстно целоваться 30 секунд. Не чмокнуться, не поржать, не сделать вид, что вы в детском саду. Нормальный взрослый поцелуй. Если кто-то ломает момент — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Поцелуй {randomPlayer.acc} в губы минимум 5 секунд. Быстрый чмок не считается. Отказ — штраф."
   },
   {
     id: "action_002",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. До следующего круга держи {randomPlayer.acc} за ляжку и не отпускай. Не за колено, не за край одежды, а нормально за ляжку. Убрал руку раньше — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Сядь рядом и держи руку на бедре {randomPlayer.gen} поверх одежды 30 секунд. Если убрал руку раньше — штраф."
   },
   {
     id: "action_003",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, сядь между ног {randomPlayer.gen} на стуле, диване или полу. Устройся удобно, как будто тебе там самое место. Сидишь так до следующей карточки. Начал оправдываться — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Сядь между ног {randomPlayer.gen}. Сидишь так до следующей карточки. Если отодвинулся раньше — штраф."
   },
   {
     id: "action_004",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, если на тебе есть лифчик — сними его через футболку и надень {randomPlayer.dat} на голову. Если лифчика нет — сними любой заметный предмет одежды и надень {randomPlayer.dat} на голову. Скучный вариант — штраф."
+    text: "{player.nom}, сними один заметный предмет одежды или аксессуар. Отдай {randomPlayer.dat}. {randomPlayer.nom} надевает это поверх своей одежды до следующего круга."
   },
   {
     id: "action_005",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Возьми {randomPlayer.acc} за палец, сходи с ним в ванную, помой ему этот палец, вернись и при всех медленно поцелуй, оближи и пососи этот палец. Делать быстро и на отвали нельзя."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Шепчи {randomPlayer.dat} на ухо 30 секунд. Тема: что ты сделал бы с ним в этой игре, если бы никто не смотрел. Слишком скучно — штраф."
   },
   {
     id: "action_006",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, иди в туалет, сними трусы и вернись. {randomPlayer.nom} должен надеть их поверх своей одежды и проходить так до следующего круга. Отказ — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. {randomPlayer.nom} кладёт руку тебе на талию. Ты кладёшь руку ему на шею. Сидите так до следующей карточки."
   },
   {
     id: "action_007",
     type: "action",
     title: "Действие",
     timer: 20,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 20 секунд целуй шею, щёку или губы {randomPlayer.gen} — место выбирает компания. Делать вид, что это случайный чмок, нельзя."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 20 секунд смотри {randomPlayer.dat} в глаза с расстояния не больше ладони. Нельзя смеяться и отворачиваться. Кто сорвался — штраф."
   },
   {
     id: "action_008",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Сядь к {randomPlayer.dat} на колени лицом к лицу и просиди так до следующей карточки. Если кто-то начинает кривляться или съезжать — штраф обоим."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Поцелуй {randomPlayer.acc} в шею. Один нормальный поцелуй, не касание на полсекунды. Отказ — штраф."
   },
   {
     id: "action_009",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom} и {randomPlayer.nom}, 30 секунд обнимайтесь так, будто это не дружеские объятия, а начало очень плохой идеи. Руки должны быть на талии, спине или бёдрах. Слабое исполнение — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд танцуй с {randomPlayer.inst} вплотную. Между вами не должно быть расстояния. Если танец выглядит как шутка — штраф."
   },
   {
     id: "action_010",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, сними с себя один предмет одежды, который реально меняет твой вид, и отдай {randomPlayer.dat}. {randomPlayer.nom} надевает его поверх своей одежды до следующего круга."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Расстегни на себе одну пуговицу, молнию или ремень. Потом {randomPlayer.nom} делает то же самое на себе."
   },
   {
     id: "action_011",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Положи руку {randomPlayer.gen} себе на внутреннюю сторону бедра поверх одежды и держи так до следующей карточки. Убрал руку — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 25 секунд медленно проводи пальцами по ладони {randomPlayer.gen}. Нельзя смеяться и торопиться. Если сделал на отвали — штраф."
   },
   {
     id: "action_012",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Ваша задача — 30 секунд целоваться так, будто вы давно хотели это сделать, но всё время делали вид, что нет. Если поцелуй выглядит жалко — оба пьёте."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Сядь к {randomPlayer.dat} на колени боком. {randomPlayer.nom} держит тебя за талию до следующей карточки."
   },
   {
     id: "action_013",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Расстегни или сними с {randomPlayer.gen} один элемент одежды: ремень, пуговицу, молнию, кофту, рубашку или аксессуар. Всё остаётся в рамках комнаты, но выглядеть должно неприлично."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Завяжи себе глаза. {randomPlayer.nom} касается твоей руки, лица или шеи. У тебя 30 секунд угадать, куда именно он прикоснулся."
   },
   {
     id: "action_014",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. До следующего хода твоя рука должна лежать на талии, бедре или шее {randomPlayer.gen}. Сам выбираешь место, но безопасная рука на плече считается слабостью."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Скажи {randomPlayer.dat} прямо: “Я бы тебя сейчас поцеловал”. После фразы либо целуешь, либо пьёшь штраф."
   },
   {
     id: "action_015",
     type: "action",
     title: "Действие",
     timer: 20,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 20 секунд целуй руку {randomPlayer.gen}: пальцы, ладонь, запястье. Не как рыцарь на балу, а так, чтобы всем стало понятно, что это уже слишком."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 20 секунд держи лицо рядом с шеей {randomPlayer.gen}. Можно дышать рядом или поцеловать. Нельзя отходить."
   },
   {
     id: "action_016",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. До следующей карточки {randomPlayer.nom} сидит у тебя между ног или ты сидишь между ног {randomPlayer.gen}. Кто именно — решает компания."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Проведи рукой по спине {randomPlayer.gen} поверх одежды сверху вниз. Потом {randomPlayer.nom} делает то же самое с тобой."
   },
   {
     id: "action_017",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, сними с себя верхнюю одежду, кофту, рубашку или футболку, если это возможно без полного раздевания. {randomPlayer.nom} должен надеть это на себя поверх своей одежды до следующего круга."
+    text: "{player.nom}, компания выбирает один предмет на тебе: кофта, ремень, носок, браслет, резинка, рубашка или аксессуар. Сними его до следующего круга или получи штраф."
   },
   {
     id: "action_018",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд танцуй с {randomPlayer.inst} максимально близко. Не смешно, не криво, не на расстоянии метра. Тела должны касаться. Иначе штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд сидите лицом друг к другу. Руки держите на талии друг друга. Если кто-то убрал руки — штраф."
   },
   {
     id: "action_019",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Поцелуй {randomPlayer.acc} в губы или в шею. Если выбираешь губы — без чмока. Если шею — не касанием на полсекунды. Компания оценивает."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Поцелуй руку {randomPlayer.gen}: пальцы, ладонь или запястье. Делай медленно. Быстрое касание не считается."
   },
   {
     id: "action_020",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Ляг или сядь так, чтобы твоя голова оказалась на коленях {randomPlayer.gen}. {randomPlayer.nom} должен держать руку у тебя на волосах, лице или шее до следующей карточки."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Ляг головой на колени {randomPlayer.gen}. {randomPlayer.nom} кладёт руку тебе на волосы или шею до следующей карточки."
   },
   {
     id: "action_021",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Скажи {randomPlayer.dat} прямо: “Я бы тебя сейчас поцеловал”. После фразы либо целуешь, либо пьёшь штраф. Уходить в шутку нельзя."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд говори {randomPlayer.dat} комплименты только про внешность и тело. Нельзя говорить про характер, доброту и ум."
   },
   {
     id: "action_022",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Положи ладонь на грудь, талию или бедро {randomPlayer.gen} поверх одежды и скажи: “Вот тут у тебя опасно”. Если делаешь это как робот — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Возьми руку {randomPlayer.gen} и положи себе на шею. Держите так до следующей карточки."
   },
   {
     id: "action_023",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд вы изображаете сцену перед сексом: близко, тихо, напряжённо, без дурацкого смеха. Цель — чтобы всем в комнате стало неловко смотреть."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд показывай без слов, как бы ты звал {randomPlayer.acc} к себе. Используй взгляд, руку и движение корпуса. Смеяться нельзя."
   },
   {
     id: "action_024",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Сними с себя носок, ремень, лифчик, майку, кофту или любой предмет, который компания посчитает достаточно смелым. {randomPlayer.nom} надевает это на себя до следующего круга."
+    text: "{player.nom}, выбери {randomPlayer.acc}. {randomPlayer.nom} выбирает, куда тебе положить руку: его колено, бедро, талию, плечо или шею. Держи руку до следующей карточки."
   },
   {
     id: "action_025",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Возьми руку {randomPlayer.gen} и проведи ею по своей талии, бедру или шее поверх одежды. Делать быстро нельзя. Компания должна увидеть, что ты не слил задание."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Скажи, какой предмет одежды на {randomPlayer.prep} сейчас лишний. {randomPlayer.nom} либо снимает его, либо вы оба пьёте штраф."
   },
   {
     id: "action_026",
     type: "action",
     title: "Действие",
     timer: 20,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 20 секунд дыши рядом с шеей {randomPlayer.gen}, почти касаясь губами. Можно поцеловать. Нельзя смеяться, убегать и превращать это в цирк."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 40 секунд вы сидите очень близко. Каждый 10 секунд меняйте место рук: плечо, талия, колено, бедро. Кто забыл сменить — штраф."
   },
   {
     id: "action_027",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. До следующего круга держи {randomPlayer.acc} за руку так, будто вы уже вместе, но ещё никому не сказали. Если отпустили — оба пьёте."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Сними с себя носок и надень его {randomPlayer.dat} на руку. Этой рукой {randomPlayer.nom} держит тебя за колено до следующей карточки."
   },
   {
     id: "action_028",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает часть одежды на тебе, которую нужно снять или расстегнуть. Если компания выбирает слишком жёстко, можно заменить на штраф, но штраф будет двойной."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд массируй плечи {randomPlayer.gen}. Не как врач, а как человек, который специально делает это слишком приятно. Слабо — штраф."
   },
   {
     id: "action_029",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд гладь {randomPlayer.acc} по руке, бедру, спине или шее поверх одежды. Место выбирает {randomPlayer.nom}. Если это выглядит как массаж бабушке — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Встань за спиной {randomPlayer.gen} и обними за талию. Стоите так до следующей карточки. Руки убирать нельзя."
   },
   {
     id: "action_030",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Сядь так, чтобы ваши ноги переплелись или касались друг друга до следующей карточки. Если кто-то отодвигается — оба получают штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Попроси {randomPlayer.acc} снять с тебя один аксессуар или предмет одежды. Потом ты снимаешь с {randomPlayer.gen} один аксессуар или предмет одежды."
   },
   {
     id: "action_031",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Поцелуй {randomPlayer.acc} в то место выше плеч, которое выберет компания: губы, щёка, шея, ухо или запястье. Самый скучный вариант не принимается."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 20 секунд держи {randomPlayer.acc} за подбородок и смотри в глаза. Нельзя отпускать и превращать в шутку."
   },
   {
     id: "action_032",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom} и {randomPlayer.nom}, 30 секунд сидите так близко, чтобы ваши лица были на расстоянии пары сантиметров. Целоваться можно. Смеяться нельзя. Первый, кто ломает атмосферу, пьёт."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Поцелуй {randomPlayer.acc} туда, куда выберет компания: губы, шея, щека, рука или плечо. Отказ — штраф."
   },
   {
     id: "action_033",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Скажи {randomPlayer.dat}, где именно на теле {randomPlayer.gen} ты бы хотел оставить поцелуй. После этого либо целуешь туда, либо получаешь штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд говори {randomPlayer.dat} на ухо только команды. Например: сядь ближе, не смейся, смотри на меня. {randomPlayer.nom} должен выполнять."
   },
   {
     id: "action_034",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. До следующего круга ты сидишь рядом с {randomPlayer.inst}, положив руку ему на внутреннюю сторону колена или бедра поверх одежды. Убрал руку — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Сядьте так, чтобы ваши ноги касались друг друга. Держите контакт ногами до следующей карточки. Кто отодвинулся — штраф."
   },
   {
     id: "action_035",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. {randomPlayer.nom} должен расстегнуть на тебе одну пуговицу, молнию, ремень или снять один аксессуар. Потом ты делаешь то же самое с {randomPlayer.inst}."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Возьми любой холодный предмет и проведи им по запястью или шее {randomPlayer.gen}. Потом {randomPlayer.nom} делает то же самое с тобой."
   },
   {
     id: "action_036",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд целуйте друг друга в шею, щёку или губы — место выбирает компания. Если оба уходите в безопасный вариант, оба пьёте."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд вы не можете говорить. Можно только смотреть, касаться рук и приближаться. Если кто-то сказал слово — штраф."
   },
   {
     id: "action_037",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Сядь к {randomPlayer.dat} на колени боком и обними за шею. Сидите так до следующей карточки. Если выглядит как дружеское фото — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Скажи {randomPlayer.dat}, какую часть его внешности ты замечаешь первой. После ответа поцелуй это место, если оно выше плеч. Если нет — целуй руку."
   },
   {
     id: "action_038",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Произнеси вслух: “Сейчас я бы сделал с тобой глупость”. Потом либо целуешь {randomPlayer.acc}, либо пьёшь штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. {randomPlayer.nom} выбирает тебе позу: сидеть у него между ног, на коленях, рядом вплотную или спиной к нему. Поза держится до следующей карточки."
   },
   {
     id: "action_039",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. До следующей карточки ваша одежда должна быть как-то связана: ремень, рукав, кофта, шарф, шнурок, что угодно. Главное — чтобы вы не могли разойтись без усилия."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 45 секунд один из вас держит второго за талию, второй держит первого за шею. Каждые 15 секунд меняйтесь ролями."
   },
   {
     id: "action_040",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд показывай, как бы ты соблазнял {randomPlayer.acc}, если бы это была не игра. Без слов. Только взгляд, дистанция, руки и тело. Слабое исполнение — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Сними один предмет одежды или аксессуар и завяжи им {randomPlayer.dat} глаза на одну карточку. Если предмет не подходит — компания выбирает другой."
   },
   {
     id: "action_041",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Сними с себя один предмет одежды и отдай {randomPlayer.dat}. {randomPlayer.nom} должен надеть это так, как скажет компания: на голову, на шею, на плечи или поверх одежды. До следующего круга не снимать."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд держи руку на щеке {randomPlayer.gen}. {randomPlayer.nom} должен держать твою руку своей рукой. Кто отпустил — штраф."
   },
   {
     id: "action_042",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Завяжи себе глаза любым предметом одежды. {randomPlayer.nom} должен прикоснуться к тебе рукой, губами или дыханием в любое место выше плеч. У тебя 30 секунд, чтобы угадать, что это было. Не угадал — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Скажи вслух: “Я выбираю тебя для плохого решения”. После этого поцелуй {randomPlayer.acc} в щёку, губы или шею. Место выбирает компания."
   },
   {
     id: "action_043",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Возьми кубик льда или холодный предмет и проведи им по шее, руке или ключице {randomPlayer.gen}. Медленно. Если делаешь это как врач на осмотре — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд ты должен повторять каждое движение {randomPlayer.gen}: взгляд, руки, наклон, поза. {randomPlayer.nom} специально делает движения провокационными."
   },
   {
     id: "action_044",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. {randomPlayer.nom} должен снять с тебя один аксессуар или предмет одежды зубами. Руки использовать нельзя. Если вещь слишком сложная — компания выбирает другую."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Поменяйтесь одним заметным предметом одежды или аксессуаром до следующего круга. Мелочь вроде кольца не считается."
   },
   {
     id: "action_045",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд вы должны сидеть так, будто вас застали в самый неподходящий момент. Никаких слов. Только поза, взгляды и руки. Компания решает, поверила или нет."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 20 секунд медленно проводи пальцем по линии от запястья {randomPlayer.gen} до локтя. Если быстро — повторяешь или пьёшь."
   },
   {
     id: "action_046",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Поставь на теле {randomPlayer.gen} один “запретный знак”: поцелуй в шею, руку, плечо или щёку. Место выбирает компания. Слишком безопасный выбор — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. {randomPlayer.nom} садится рядом. Ты кладёшь голову ему на плечо, он кладёт руку тебе на бедро или колено. До следующей карточки."
   },
   {
     id: "action_047",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Сними с себя носок и надень его {randomPlayer.dat} на руку как перчатку. До следующего круга {randomPlayer.nom} обязан этой рукой держать тебя за колено, бедро или плечо."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд говори {randomPlayer.dat}, что именно в нём может свести с ума. Нельзя отвечать общими словами. Нужна конкретика."
   },
   {
     id: "action_048",
     type: "action",
     title: "Действие",
     timer: 20,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 20 секунд медленно проводи пальцами по ладони {randomPlayer.gen}, как будто это не ладонь, а начало очень неправильной переписки. Если компания не почувствовала напряжение — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает один вариант: поцелуй в губы, рука на бедре, сесть на колени или снять предмет одежды. Выполняешь выбранное или пьёшь двойной штраф."
   },
   {
     id: "action_049",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Скажи {randomPlayer.dat}, какой предмет одежды на {randomPlayer.prep} сейчас явно лишний. После этого {randomPlayer.nom} либо снимает его, либо вы оба пьёте штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 60 секунд вы пара. Все обращения друг к другу только: “мой соблазн” и “моя ошибка”. Забыл обращение — штраф."
   },
   {
     id: "action_050",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Встань за спиной {randomPlayer.gen}, положи руки на талию и 30 секунд стой так близко, будто вы уже перешли черту, но ещё никому не сказали."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Поставь {randomPlayer.acc} перед собой, возьми за талию и скажи одну фразу, после которой стало бы понятно, что ты флиртуешь. Слабая фраза — штраф."
   }
 ];
 
@@ -488,350 +488,350 @@ const ACTION_CARDS_051_100 = [
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает один предмет на тебе. Ты снимаешь его и отдаёшь {randomPlayer.dat}. {randomPlayer.nom} решает, куда на себе это надеть. Отказ — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Возьми {randomPlayer.acc} за руку и 30 секунд веди его пальцами по своей шее или ключице. Всё поверх одежды. Если делаешь быстро — штраф."
   },
   {
     id: "action_052",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Возьми руку {randomPlayer.gen} и приложи её к своей шее, талии или бедру поверх одежды. Держите так до следующей карточки."
+    text: "{player.nom}, выбери {randomPlayer.acc}. {randomPlayer.nom} должен выбрать тебе место рядом с собой: вплотную справа, вплотную слева, на колени или между ног. Ты сидишь там до следующей карточки."
   },
   {
     id: "action_053",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom} и {randomPlayer.nom}, 30 секунд играете сцену “мы случайно закрылись в одной комнате”. Говорить можно только шёпотом. Смеяться нельзя. Компания оценивает реалистичность."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 20 секунд держи ладонь на груди {randomPlayer.gen} поверх одежды. Не двигай рукой. Если кто-то убрал контакт — штраф."
   },
   {
     id: "action_054",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Если на тебе есть бельё, которое можно снять без полного раздевания — сними его и отдай {randomPlayer.dat}. Если нет — снимаешь самый смелый предмет одежды, который разрешит компания."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Сними с себя один предмет, который видно всем. {randomPlayer.nom} решает, где тебе его носить до следующего круга: на шее, руке, голове или талии."
   },
   {
     id: "action_055",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. До следующего круга {randomPlayer.nom} должен держать тебя за пояс, талию или бедро каждый раз, когда ты говоришь. Забыл — пьёт."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд задавай {randomPlayer.dat} короткие команды: “сядь ближе”, “смотри на меня”, “не улыбайся”, “держи руку здесь”. {randomPlayer.nom} выполняет без споров."
   },
   {
     id: "action_056",
     type: "action",
     title: "Действие",
     timer: 25,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 25 секунд целуй пальцы {randomPlayer.gen} по одному. Не торопись. Если выглядело как шутка — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Поцелуй {randomPlayer.acc} в запястье, потом в плечо. Два отдельных поцелуя. Быстрое касание губами не считается."
   },
   {
     id: "action_057",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Сядь к {randomPlayer.dat} боком на колени и положи руку ему на шею. {randomPlayer.nom} держит тебя за талию. Сидите так до следующей карточки."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 40 секунд сидите спина к груди: один сзади, второй впереди. Задний держит руки на талии переднего. Через 20 секунд поменяйтесь местами."
   },
   {
     id: "action_058",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Расстегни на себе одну пуговицу, молнию, ремень или ослабь один элемент одежды. Потом {randomPlayer.nom} делает с тобой то же самое. Компания выбирает, достаточно ли смело."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Назови одну часть внешности {randomPlayer.gen}, которая тебя реально цепляет. Потом коснись этого места рукой, если оно выше пояса. Если ниже — коснись руки."
   },
   {
     id: "action_059",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд вы должны целоваться так, будто после этого будет сложно делать вид, что всё нормально. Если поцелуй сухой и трусливый — оба пьёте."
+    text: "{player.nom}, выбери {randomPlayer.acc}. {randomPlayer.nom} закрывает глаза. Ты 30 секунд говоришь ему на ухо три фразы, от которых должно стать неловко. Слишком мягко — штраф."
   },
   {
     id: "action_060",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Компания называет часть тела выше пояса. Ты должен поцеловать {randomPlayer.acc} туда. Быстро чмокнуть и убежать нельзя."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Возьми предмет одежды или аксессуар {randomPlayer.gen} и надень на себя поверх своей одежды. Носишь до следующего круга."
   },
   {
     id: "action_061",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Возьми любой предмет одежды {randomPlayer.gen} и надень его на себя поверх своей одежды. До следующего круга вы выглядите как люди, у которых вечер пошёл не по плану."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 25 секунд держи лицо в пяти сантиметрах от лица {randomPlayer.gen}. Нельзя целоваться, смеяться и отходить. Кто сорвался — штраф."
   },
   {
     id: "action_062",
     type: "action",
     title: "Действие",
     timer: 20,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 20 секунд держи лицо рядом с шеей {randomPlayer.gen}. Можно целовать, можно дышать, можно шептать. Нельзя отходить и смеяться."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает одно действие: поцелуй в руку, рука на талии, сесть вплотную или обменяться одеждой. Выполняешь сразу или пьёшь двойной штраф."
   },
   {
     id: "action_063",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает: ты садишься между ног {randomPlayer.gen} или {randomPlayer.nom} садится между твоих ног. Сидеть так до следующей карточки."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд {randomPlayer.nom} держит твою руку у себя на талии. Ты не убираешь руку и не смеёшься. Убрал — штраф."
   },
   {
     id: "action_064",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Сними один предмет одежды и положи его на колени {randomPlayer.gen}. {randomPlayer.nom} должен держать его там до следующего круга."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Встань перед {randomPlayer.inst} на расстоянии шага. Медленно подойди вплотную и остановись. {randomPlayer.nom} решает: поцелуй в щёку или штраф."
   },
   {
     id: "action_065",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд медленно танцуй у {randomPlayer.gen} между ног или перед {randomPlayer.inst}, не касаясь руками. Если выглядело как утренник — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 45 секунд вы играете “зеркало”: {randomPlayer.nom} делает движения руками, корпусом и взглядом, а ты повторяешь. Движения должны быть взрослые, не смешные."
   },
   {
     id: "action_066",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. {randomPlayer.nom} должен провести рукой по твоей спине, талии или бедру поверх одежды. Медленно. Потом ты делаешь то же самое."
+    text: "{player.nom}, выбери {randomPlayer.acc}. {randomPlayer.nom} выбирает один предмет на тебе, который нужно снять или расстегнуть. Если предмет слишком жёсткий — компания выбирает замену."
   },
   {
     id: "action_067",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Поцелуй {randomPlayer.acc} в губы, а потом сразу скажи: “Вот теперь делай вид, что ничего не было”. Если не целуешь — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 20 секунд держи руку {randomPlayer.gen} двумя руками и смотри только на него. В конце скажи: “Я бы не отпустил”."
   },
   {
     id: "action_068",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. До следующего своего хода вы сидите в одной позе: один сзади обнимает второго за талию. Кто разрывает позу — пьёт."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Поцелуй {randomPlayer.acc} в место, которое выберет сам {randomPlayer.nom}: рука, шея, щека, плечо или губы. Отказ — штраф."
   },
   {
     id: "action_069",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд показывай, как бы ты раздевал {randomPlayer.acc}, но не снимая одежду полностью: жесты, руки, взгляд, движение. Если стесняешься — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд ты должен сидеть на полу у ног {randomPlayer.gen}. {randomPlayer.nom} кладёт руку тебе на голову, плечо или шею."
   },
   {
     id: "action_070",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Возьми {randomPlayer.acc} за руку и проведи его пальцами по своим губам, шее или ключице. Медленно. Не сделал нормально — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Скажи {randomPlayer.dat}: “Выбери, что мне снять”. {randomPlayer.nom} выбирает аксессуар или предмет одежды. Ты снимаешь его до следующего круга."
   },
   {
     id: "action_071",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает один участок одежды на тебе, который нужно снять, расстегнуть или задрать. Не хочешь — сразу двойной штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд держи руку на пояснице {randomPlayer.gen}. {randomPlayer.nom} в это время держит руку на твоём плече или шее."
   },
   {
     id: "action_072",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom} и {randomPlayer.nom}, 30 секунд вы должны быть в позе, в которой вас было бы очень неловко случайно сфотографировать. Компания выбирает, достаточно ли компрометирующе."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Положи ладонь {randomPlayer.gen} себе на грудь поверх одежды и скажи: “Слушай, как спокойно я вру”. Держать 10 секунд."
   },
   {
     id: "action_073",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Скажи, какой предмет одежды ты бы снял с {randomPlayer.gen} первым. Потом {randomPlayer.nom} либо снимает этот предмет, либо вы оба пьёте."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 60 секунд вы сидите как пара: руки держите друг на друге, разговариваете только тихо и обращаетесь друг к другу “мой риск” и “моя проблема”. Забыл обращение — штраф."
   },
   {
     id: "action_074",
     type: "action",
     title: "Действие",
     timer: 20,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 20 секунд держи руку у {randomPlayer.gen} на внутренней стороне бедра поверх одежды. Не двигать туда-сюда, просто держать. Убрал — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает один предмет одежды на {randomPlayer.prep}. Ты должен поправить его на {randomPlayer.prep}: воротник, рукав, ремень, цепочку, волосы или кофту. Делай медленно."
   },
   {
     id: "action_075",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. До следующего круга {randomPlayer.nom} должен сидеть на твоём месте, а ты — у него между ног или рядом настолько близко, насколько скажет компания."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 25 секунд {randomPlayer.nom} держит тебя за подбородок, а ты смотришь ему в глаза. Нельзя отворачиваться. Кто засмеялся — штраф."
   },
   {
     id: "action_076",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд шепчи {randomPlayer.dat} в ухо всё, что сделал бы с ним в этой игре, если бы компания не смотрела. Потом {randomPlayer.nom} оценивает: “слабо” или “грязно”."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Сними с себя один предмет и положи на колени {randomPlayer.gen}. {randomPlayer.nom} держит его там до следующей карточки."
   },
   {
     id: "action_077",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Сними с себя один предмет одежды и дай {randomPlayer.dat} выбрать, куда его на тебе завязать: глаза, руки, шея, талия или бедро."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд медленно веди пальцами по плечу {randomPlayer.gen} через одежду. Потом {randomPlayer.nom} повторяет то же самое с тобой."
   },
   {
     id: "action_078",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Поцелуй {randomPlayer.acc} так, чтобы после этого компания решила: это было действие или вы просто давно ждали повод?"
+    text: "{player.nom}, выбери {randomPlayer.acc}. Скажи честно, куда бы ты поцеловал {randomPlayer.acc}, если бы не было штрафа. Потом целуешь туда, если место выше пояса. Если нет — целуешь руку."
   },
   {
     id: "action_079",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom} и {randomPlayer.nom}, 30 секунд один из вас сидит на коленях у другого. Кто сверху — решает компания. Руки должны быть не в воздухе, а на талии, спине или бёдрах."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд вы держитесь за руки, но сидите максимально близко. Каждый раз, когда кто-то улыбается, второй сжимает руку сильнее."
   },
   {
     id: "action_080",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает: поцелуй в губы, поцелуй в шею, рука на бедре или предмет одежды снять. Выполняешь выбранное или получаешь штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. {randomPlayer.nom} должен выбрать для тебя одно слово на следующий круг: “хочу”, “опасно”, “ещё” или “ближе”. Каждый твой ответ начинается с этого слова."
   },
   {
     id: "action_081",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает один предмет одежды на тебе. Ты снимаешь его и надеваешь на {randomPlayer.acc} так, чтобы выглядело максимально неприлично, но поверх одежды. До следующего круга не снимать."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 40 секунд вы сидите рядом. Каждые 10 секунд компания называет место для руки: плечо, талия, колено, бедро. Вы оба выполняете."
   },
   {
     id: "action_082",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Завяжи себе глаза любым предметом одежды. {randomPlayer.nom} должен прикоснуться к тебе губами, пальцами или дыханием в место выше пояса. У тебя 30 секунд угадать, чем именно тебя коснулись. Не угадал — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Поцелуй {randomPlayer.acc} в щёку, но не сразу: сначала 5 секунд держи лицо рядом с его лицом. Быстрый вариант не считается."
   },
   {
     id: "action_083",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Сними с себя ремень, кофту, футболку, лифчик, носок или другой заметный предмет. Компания решает, куда {randomPlayer.nom} должен это надеть: на голову, шею, руку, талию или поверх одежды."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд {randomPlayer.nom} сидит с закрытыми глазами, а ты говоришь три вещи, которые в нём могут кого-то соблазнить."
   },
   {
     id: "action_084",
     type: "action",
     title: "Действие",
     timer: 40,
-    text: "{player.nom} и {randomPlayer.nom}, у вас 40 секунд на сцену “мы остались одни, и всё пошло не по плану”. Без слов. Только взгляды, руки, дистанция и тело. Если компания не поверила — оба пьёте."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Выберите один предмет между вами: карта, стакан, салфетка или любой мелкий предмет. Передайте его друг другу губами без рук. Уронили — оба пьёте."
   },
   {
     id: "action_085",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Возьми лёд или любой холодный предмет и проведи им по шее, ключице, руке или внутренней стороне запястья {randomPlayer.gen}. Медленно. Если делаешь как врач — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 20 секунд держи руку на колене {randomPlayer.gen}, а {randomPlayer.nom} держит руку на твоём колене. Убрал руку — штраф."
   },
   {
     id: "action_086",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. {randomPlayer.nom} должен снять с тебя один аксессуар или предмет одежды зубами. Руки использовать нельзя. Если вещь слишком сложная — компания выбирает другую."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает: ты садишься ближе к {randomPlayer.dat}, или {randomPlayer.nom} садится ближе к тебе. Дистанция — не больше ладони до следующей карточки."
   },
   {
     id: "action_087",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Сядь к {randomPlayer.dat} на колени лицом к лицу. 30 секунд ваши руки должны быть на талии, спине, шее или бёдрах друг друга. Если руки висят без дела — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд ты должен говорить {randomPlayer.dat} только вопросы, на которые ответ “да” звучит подозрительно. Например: “Ты хочешь ближе?”"
   },
   {
     id: "action_088",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Скажи, какой предмет одежды на {randomPlayer.prep} сейчас явно лишний. {randomPlayer.nom} либо снимает его, либо вы оба получаете штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. {randomPlayer.nom} выбирает тебе место для поцелуя выше плеч. Ты выполняешь. Если выбирает губы — минимум 5 секунд."
   },
   {
     id: "action_089",
     type: "action",
     title: "Действие",
     timer: 25,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 25 секунд целуй пальцы {randomPlayer.gen} по одному. Не торопись и не превращай это в шутку. Если выглядело слабо — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 45 секунд один из вас сидит, второй стоит между его коленями. Через половину времени поменяйтесь. Руки держать на плечах или талии."
   },
   {
     id: "action_090",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает: рука на бедре, поцелуй в шею, поцелуй в губы или снять один предмет одежды. Выполняешь выбранное или получаешь двойной штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Скажи {randomPlayer.dat}, что на нём сейчас выглядит самым соблазнительным. Потом компания решает: ответ засчитан или штраф."
   },
   {
     id: "action_091",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Иди с {randomPlayer.inst} в ванную, помой один палец на руке {randomPlayer.gen}, вернись и при всех медленно поцелуй и оближи этот палец. Делать быстро и на отвали нельзя."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд вы держите один общий предмет между лбами или носами. Руки использовать нельзя. Уронили — оба пьёте."
   },
   {
     id: "action_092",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, если на тебе есть трусы, иди в туалет, сними их и вернись. {randomPlayer.nom} надевает их поверх своей одежды до следующего круга. Если не выполняешь — штраф выбирает компания."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Расстегни или ослабь на себе один элемент одежды. {randomPlayer.nom} решает, оставить так до следующего круга или вернуть обратно."
   },
   {
     id: "action_093",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд показывай, как бы ты раздевал {randomPlayer.acc}, но не снимая одежду полностью: руки, взгляд, движения, дистанция. Если стесняешься — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 25 секунд говори {randomPlayer.dat} на ухо только одну фразу, повторяя её медленно: “Не делай вид, что тебе всё равно”."
   },
   {
     id: "action_094",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Сядь у {randomPlayer.gen} между ног и положи руки {randomPlayer.gen} себе на плечи или шею. Сидеть так до следующей карточки."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает одну часть твоей одежды. {randomPlayer.nom} должен поправить её на тебе без спешки. Ты не помогаешь руками."
   },
   {
     id: "action_095",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Возьми руку {randomPlayer.gen} и проведи ею по своей талии, шее или бедру поверх одежды. Медленно. Если компания говорит, что ты слил — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд сидите с переплетёнными пальцами. В конце каждый говорит одну фразу: “Я бы рискнул” или “Я бы сбежал”."
   },
   {
     id: "action_096",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom} и {randomPlayer.nom}, 30 секунд вы должны быть в позе, в которой вас было бы стыдно случайно сфотографировать. Компания решает, достаточно ли компрометирующе."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Дай {randomPlayer.dat} право выбрать: ты снимаешь один предмет, целуешь его руку или садишься к нему ближе. Выбор выполняется сразу."
   },
   {
     id: "action_097",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Расстегни на себе одну пуговицу, молнию, ремень или ослабь один элемент одежды. Потом {randomPlayer.nom} делает то же самое с собой. Если оба выбрали слишком безопасно — оба пьёте."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 40 секунд вы сидите молча, но каждые 10 секунд один из вас должен сделать маленький шаг ближе. Если уже вплотную — руки на талию."
   },
   {
     id: "action_098",
     type: "action",
     title: "Действие",
     timer: 20,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 20 секунд держи лицо рядом с шеей {randomPlayer.gen}. Можно целовать, можно дышать, можно шептать. Нельзя отходить и ржать."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Скажи компании, что бы ты запретил {randomPlayer.dat} делать сегодня, чтобы не начались проблемы. Потом {randomPlayer.nom} выполняет этот запрет до следующего круга."
   },
   {
     id: "action_099",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает часть тела выше пояса. Ты должен поцеловать {randomPlayer.acc} туда. Быстро чмокнуть и убежать нельзя."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд ты держишь одну руку на плече {randomPlayer.gen}, вторую — у себя на груди. {randomPlayer.nom} держит тебя за талию."
   },
   {
     id: "action_100",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Сними с себя один предмет одежды и положи его на колени {randomPlayer.gen}. {randomPlayer.nom} должен держать его там до следующего круга."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает для вас один контакт до следующей карточки: плечо к плечу, рука в руке, нога к ноге или рука на талии. Контакт нельзя разрывать."
   }
 ];
 
@@ -851,350 +851,350 @@ const ACTION_CARDS_101_150 = [
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд медленно танцуй перед {randomPlayer.inst} или у {randomPlayer.gen} между ног, не касаясь руками. Если выглядело как детская дискотека — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. В течение 30 секунд {randomPlayer.nom} говорит тебе, куда положить руку: плечо, талия, колено, бедро или шея. Ты выполняешь каждую команду без споров. Отказ — штраф."
   },
   {
     id: "action_102",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. {randomPlayer.nom} должен провести рукой по твоей спине, талии или бедру поверх одежды. Медленно. Потом ты делаешь то же самое."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Напиши пальцем на руке или шее {randomPlayer.gen} одно слово: “хочу”, “нельзя”, “ближе”, “риск” или “ошибка”. {randomPlayer.nom} должен угадать слово. Не угадал — пьёт."
   },
   {
     id: "action_103",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Поцелуй {randomPlayer.acc} в губы, а потом сразу скажи: “Вот теперь делай вид, что ничего не было”. Если не целуешь — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 40 секунд вы играете в запрет: вам нельзя касаться губами, но нужно держаться лицами как можно ближе. Кто первый отодвинулся — штраф."
   },
   {
     id: "action_104",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. До следующего своего хода вы сидите в одной позе: один сзади обнимает второго за талию. Кто разрывает позу — пьёт."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Скажи {randomPlayer.dat}: “Сегодня ты мой выбор”. После этого компания выбирает: поцелуй в руку, поцелуй в щёку или рука на талии. Выполняешь сразу."
   },
   {
     id: "action_105",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Возьми {randomPlayer.acc} за руку и проведи его пальцами по своим губам, шее или ключице. Медленно. Не сделал нормально — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд {randomPlayer.nom} сидит с закрытыми глазами, а ты медленно приближаешься и останавливаешься в пяти сантиметрах от лица. В конце {randomPlayer.nom} выбирает: поцелуй в щёку или штраф тебе."
   },
   {
     id: "action_106",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, компания выбирает один участок одежды на тебе, который нужно снять, расстегнуть или задрать. Не хочешь — сразу двойной штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Компания называет один предмет одежды на тебе. {randomPlayer.nom} должен снять, расстегнуть или поправить этот предмет. Если предмет неудобный — компания выбирает замену."
   },
   {
     id: "action_107",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Скажи, какой предмет одежды ты бы снял с {randomPlayer.gen} первым. Потом {randomPlayer.nom} либо снимает этот предмет, либо вы оба пьёте."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 25 секунд говори {randomPlayer.dat} только фразы из двух слов: “сядь ближе”, “не отходи”, “смотри сюда”, “руку сюда”, “ещё ближе”. {randomPlayer.nom} выполняет."
   },
   {
     id: "action_108",
     type: "action",
     title: "Действие",
     timer: 20,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 20 секунд держи руку на внутренней стороне бедра {randomPlayer.gen} поверх одежды. Не двигать туда-сюда, просто держать. Убрал — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Положи руку {randomPlayer.gen} себе на плечо, а свою руку положи {randomPlayer.dat} на талию. Так сидите до следующей карточки."
   },
   {
     id: "action_109",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. До следующего круга {randomPlayer.nom} должен сидеть на твоём месте, а ты — у него между ног или рядом настолько близко, насколько скажет компания."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд ты должен говорить {randomPlayer.dat}, что именно в его внешности может соблазнить человека. Нужно назвать минимум три конкретные детали."
   },
   {
     id: "action_110",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд шепчи {randomPlayer.dat} в ухо всё, что сделал бы с ним в этой игре, если бы компания не смотрела. Потом {randomPlayer.nom} оценивает: “слабо” или “грязно”."
+    text: "{player.nom}, выбери {randomPlayer.acc}. {randomPlayer.nom} выбирает тебе новое место до следующей карточки: у его ног, рядом вплотную, за его спиной или на его месте. Ты переходишь туда сразу."
   },
   {
     id: "action_111",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Сними с себя один предмет одежды и дай {randomPlayer.dat} выбрать, куда его на тебе завязать: глаза, руки, шея, талия или бедро."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 20 секунд держи руку на шее {randomPlayer.gen} сбоку или сзади. Не сжимать, просто держать. Если {randomPlayer.nom} убрал твою руку — он пьёт."
   },
   {
     id: "action_112",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Поцелуй {randomPlayer.acc} так, чтобы после этого компания решила: это было действие или вы просто давно ждали повод."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Сними с себя любой предмет и обменяй его на один предмет {randomPlayer.gen}. Оба носите полученное до следующего круга."
   },
   {
     id: "action_113",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom} и {randomPlayer.nom}, 30 секунд один из вас сидит на коленях у другого. Кто сверху — решает компания. Руки должны быть не в воздухе, а на талии, спине или бёдрах."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 45 секунд вы сидите так: один держит второго за запястья, второй не убирает руки. Через 20 секунд поменяйтесь ролями."
   },
   {
     id: "action_114",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает одну вещь на {randomPlayer.prep}. Ты должен снять её зубами или губами, если это реально. Если нельзя — выбирается другая вещь."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Поцелуй {randomPlayer.acc} в то место выше плеч, которое назовёт компания. Возможные варианты: губы, щека, шея, ухо, плечо, рука."
   },
   {
     id: "action_115",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд вы сидите в тишине, касаясь лбами или носами. Целоваться можно. Смеяться нельзя. Кто первый ломается — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд вы должны говорить друг другу только правду одним предложением. Темы: внешность, желание, ревность, интерес. Уклонение — штраф."
   },
   {
     id: "action_116",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Проведи пальцем по губам {randomPlayer.gen}, потом по своей шее. Медленно, при всех. Если выглядит как случайное движение — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. {randomPlayer.nom} выбирает: ты целуешь его руку, он целует твою руку, или вы целуете друг друга в щёку. Выбор выполняется сразу."
   },
   {
     id: "action_117",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Попроси {randomPlayer.acc} снять с тебя один предмет одежды или аксессуар. После этого ты снимаешь с {randomPlayer.gen} один предмет. Всё остаётся в комнате до следующего круга."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд ты сидишь спиной к {randomPlayer.dat}. {randomPlayer.nom} держит руки у тебя на плечах. Ты должен не оборачиваться и не смеяться."
   },
   {
     id: "action_118",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд играете сцену “последний шанс перед тем, как всё станет ошибкой”. Можно касаться лица, шеи, талии и рук. Компания решает, поверила или нет."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Скажи {randomPlayer.dat}: “Сейчас я решаю за тебя”. Потом выбери для него: сесть ближе, дать руку, закрыть глаза или поцеловать тебя в щёку."
   },
   {
     id: "action_119",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. До следующей карточки вы должны сидеть так, чтобы одна рука {randomPlayer.gen} была у тебя на бедре, а твоя — на талии или шее {randomPlayer.gen}."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 40 секунд вы передаёте друг другу один предмет только губами или подбородком, без рук. Уронили — оба пьёте штраф."
   },
   {
     id: "action_120",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает: снять предмет одежды, поцеловать, сесть на колени, рука на бедре или шёпот на ухо. Выполняешь без торговли или получаешь штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает один контакт до следующего круга: твоя рука на его талии, его рука на твоём бедре, ваши руки вместе или ваши плечи вплотную."
   },
   {
     id: "action_121",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает один предмет одежды на тебе. Ты снимаешь его и надеваешь {randomPlayer.dat} на голову, шею или талию. До следующего круга не снимать."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд {randomPlayer.nom} задаёт тебе короткие команды, а ты выполняешь только взглядом и движением корпуса. Руками пользоваться нельзя."
   },
   {
     id: "action_122",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд вы целуетесь так, будто это не карточка, а повод, который вы оба давно ждали. Быстрый чмок не засчитывается. Если компания говорит “слабо” — оба пьёте."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Попроси {randomPlayer.acc} выбрать тебе штраф без алкоголя: поцелуй в руку, сесть ближе, снять аксессуар или сказать грязный комплимент. Выполняешь выбранное."
   },
   {
     id: "action_123",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. До следующей карточки твоя рука лежит на ляжке {randomPlayer.gen}. Не на колене, не рядом, не на воздухе. Убрал руку — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 20 секунд держи {randomPlayer.acc} за талию двумя руками. {randomPlayer.nom} в это время держит руки у тебя на плечах."
   },
   {
     id: "action_124",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, если на тебе есть лифчик — сними его через футболку и надень {randomPlayer.dat} на голову. Если лифчика нет — снимаешь самый смелый предмет одежды, который разрешит компания."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Скажи компании, какая часть {randomPlayer.gen} выглядит самой опасной сегодня. Потом {randomPlayer.nom} решает: засчитать ответ или назначить тебе штраф."
   },
   {
     id: "action_125",
     type: "action",
     title: "Действие",
     timer: 40,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 40 секунд вы сидите так, будто вас застали в середине очень неправильного момента. Руки должны быть на талии, бёдрах, шее или спине. Если выглядит безопасно — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 60 секунд вы должны сидеть как тайная пара: не отходить друг от друга, говорить тихо и держать один физический контакт. Разорвали контакт — оба пьёте."
   },
   {
     id: "action_126",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Иди с {randomPlayer.inst} в ванную, помой один палец на руке {randomPlayer.gen}, вернись и при всех медленно оближи этот палец. Быстро и смешно не считается."
+    text: "{player.nom}, выбери {randomPlayer.acc}. {randomPlayer.nom} закрывает глаза. Ты выбираешь: поцелуй в руку, касание плеча или дыхание рядом с шеей. {randomPlayer.nom} должен угадать, что ты сделал."
   },
   {
     id: "action_127",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Сядь у {randomPlayer.gen} между ног и положи руки {randomPlayer.gen} себе на плечи. Сидеть так до следующей карточки. Начал оправдываться — пьёшь."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд вы должны держать один общий стакан или предмет двумя руками одновременно. Руки должны касаться. Отпустил — штраф."
   },
   {
     id: "action_128",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Сними с себя один предмет одежды и отдай {randomPlayer.dat}. {randomPlayer.nom} должен надеть его поверх своей одежды так, как скажет компания."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Скажи {randomPlayer.dat}: “Ты сейчас делаешь выбор”. {randomPlayer.nom} выбирает: поцеловать тебя в щёку, сесть к тебе ближе или взять твою руку."
   },
   {
     id: "action_129",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд целуй {randomPlayer.acc} в шею, губы или щёку. Место выбирает компания. Сухой чмок и побег не засчитываются."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд ты должен стоять за спиной {randomPlayer.gen} и говорить ему на ухо короткие фразы. Минимум три фразы. Слишком мягко — штраф."
   },
   {
     id: "action_130",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, иди в туалет и сними один предмет одежды, который компания не видит сейчас напрямую. Вернись и отдай его {randomPlayer.dat}. {randomPlayer.nom} носит это поверх одежды до следующего круга."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает один предмет на {randomPlayer.prep}. Ты должен снять, поправить или перенадеть его. Если предмет нельзя трогать — выбирается другой."
   },
   {
     id: "action_131",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Положи руку {randomPlayer.gen} себе на талию, шею или бедро. Рука остаётся там до следующей карточки. Если убрали раньше — оба пьёте."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 25 секунд вы держитесь лбами или носами рядом, не целуясь. Нельзя смеяться, говорить и отворачиваться."
   },
   {
     id: "action_132",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд медленно танцуй перед {randomPlayer.inst} так близко, чтобы компания перестала делать вид, что это просто танец. Если выглядело как шутка — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Назови одну вещь, которую {randomPlayer.nom} должен сделать с тобой прямо сейчас: взять за руку, сесть ближе, поцеловать в щёку или положить руку на плечо."
   },
   {
     id: "action_133",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает одну вещь на {randomPlayer.prep}. Ты должен снять её зубами или губами, если это реально. Если вещь неудобная — компания выбирает другую."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 40 секунд вы по очереди говорите друг другу фразы, начинающиеся с “Я бы...”. Фразы должны быть взрослые, но без прямого секса. Скучная фраза — штраф."
   },
   {
     id: "action_134",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Сядь к {randomPlayer.dat} на колени боком и обними за шею. {randomPlayer.nom} держит тебя за талию или бедро до следующей карточки."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Сними с себя один предмет и положи его на плечо, колено или руку {randomPlayer.gen}. {randomPlayer.nom} не имеет права убирать его до следующей карточки."
   },
   {
     id: "action_135",
     type: "action",
     title: "Действие",
     timer: 25,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 25 секунд целуй руку {randomPlayer.gen}: пальцы, ладонь, запястье. Не как рыцарь, а так, чтобы всем стало неловко смотреть."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд ты должен быть “запрещённым советчиком”: шепчи {randomPlayer.dat}, что ему нельзя делать сегодня, потому что это плохо закончится."
   },
   {
     id: "action_136",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Скажи {randomPlayer.dat}, какой предмет одежды ты бы снял с {randomPlayer.gen} первым. Потом {randomPlayer.nom} либо снимает этот предмет, либо вы оба пьёте."
+    text: "{player.nom}, выбери {randomPlayer.acc}. {randomPlayer.nom} ставит твою руку туда, где ему разрешено: плечо, рука, талия, колено или бедро. Ты держишь руку 15 секунд."
   },
   {
     id: "action_137",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom} и {randomPlayer.nom}, 30 секунд вы должны быть в позе, в которой вас было бы стыдно случайно увидеть родителям. Компания решает, достаточно ли компрометирующе."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 20 секунд {randomPlayer.nom} держит тебя за руку, а ты должен смотреть на его губы, не отводя взгляд. Засмеялся — штраф."
   },
   {
     id: "action_138",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Проведи пальцами по губам {randomPlayer.gen}, потом по своей шее. Медленно, при всех. Если движение выглядит случайным — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Скажи одну фразу, которую ты бы написал {randomPlayer.dat} ночью, если бы был смелее. Если компания говорит “слабо” — штраф."
   },
   {
     id: "action_139",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. До следующего круга вы сидите так близко, чтобы ваши ноги касались друг друга. Если кто-то отодвинулся — пьёте оба."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 45 секунд вы сидите напротив. Один держит руки на коленях другого, второй держит руки на плечах первого. Через 20 секунд меняетесь."
   },
   {
     id: "action_140",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд шепчи {randomPlayer.dat} в ухо, что бы ты сделал с ним в этой игре, если бы компания не смотрела. Потом {randomPlayer.nom} оценивает: “слабо” или “грязно”."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает тебе одну роль до следующей карточки: ревнивый, соблазняющий, подчиняющийся или опасно спокойный. Ты общаешься с {randomPlayer.inst} только в этой роли."
   },
   {
     id: "action_141",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает: рука на ляжке, поцелуй в губы, поцелуй в шею, снять предмет одежды или сесть на колени. Выполняешь без торговли или получаешь двойной штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд вы передаёте друг другу взглядом одну мысль: “подойди ближе”. Нельзя говорить. В конце {randomPlayer.nom} решает, получилось или нет."
   },
   {
     id: "action_142",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Сними с себя один предмет одежды и дай {randomPlayer.dat} выбрать, куда его на тебе завязать: глаза, шея, руки, талия или бедро."
+    text: "{player.nom}, выбери {randomPlayer.acc}. {randomPlayer.nom} выбирает одну твою фразу на следующий круг: “я виноват”, “я хочу”, “я боюсь” или “я не против”. Ты обязан сказать её перед каждым ответом."
   },
   {
     id: "action_143",
     type: "action",
     title: "Действие",
     timer: 20,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 20 секунд держи лицо рядом с шеей {randomPlayer.gen}. Можно целовать, можно шептать, можно дышать рядом. Нельзя ржать и отходить."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд ты должен держать руку на внутренней стороне локтя {randomPlayer.gen} и говорить только шёпотом. Если говоришь громко — штраф."
   },
   {
     id: "action_144",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. {randomPlayer.nom} должен расстегнуть на тебе одну пуговицу, молнию, ремень или снять один аксессуар. Потом ты делаешь то же самое с {randomPlayer.inst}."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Поставь {randomPlayer.acc} перед собой, сделай один шаг ближе и скажи: “Сейчас ты слишком близко”. Потом не отходи 10 секунд."
   },
   {
     id: "action_145",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Поцелуй {randomPlayer.acc} в губы, а потом скажи: “Теперь делай вид, что ничего не было”. Если не целуешь — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 60 секунд вы должны выполнять команды компании только вдвоём: ближе, руки, взгляд, поменяйтесь местами, тише, замрите. Отказ от команды — штраф."
   },
   {
     id: "action_146",
     type: "action",
     title: "Действие",
     timer: 45,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 45 секунд вы играете сцену “мы не должны были оставаться одни”. Можно касаться лица, шеи, рук, талии и бёдер. Если компания не поверила — оба пьёте."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Скажи {randomPlayer.dat}, что бы ты запретил ему делать, если бы ревновал. {randomPlayer.nom} должен выполнить этот запрет до следующей карточки."
   },
   {
     id: "action_147",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Возьми руку {randomPlayer.gen} и проведи его пальцами по своим губам, шее или ключице. Медленно. Если делаешь на отвали — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 25 секунд ты держишь руку у {randomPlayer.gen} на плече, а {randomPlayer.nom} держит руку у тебя на пояснице. Нельзя двигаться."
   },
   {
     id: "action_148",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. До следующей карточки одна рука {randomPlayer.gen} должна лежать у тебя на бедре, а твоя — на талии, шее или спине {randomPlayer.gen}."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Компания выбирает одно: ты целуешь {randomPlayer.acc} в губы, {randomPlayer.nom} целует тебя в щёку, или вы сидите вплотную до следующей карточки."
   },
   {
     id: "action_149",
     type: "action",
     title: "Действие",
     timer: 30,
-    text: "{player.nom}, выбери {randomPlayer.acc}. 30 секунд показывай, как бы ты соблазнял {randomPlayer.acc}, если бы это была не игра. Без слов. Только взгляд, руки, дистанция и тело. Слабое исполнение — штраф."
+    text: "{player.nom}, выбери {randomPlayer.acc}. 40 секунд вы должны говорить друг другу только честные ответы на вопрос: “Что во мне может быть опасным?” Минимум по два ответа."
   },
   {
     id: "action_150",
     type: "action",
     title: "Действие",
     timer: null,
-    text: "{player.nom}, выбери {randomPlayer.acc}. Финальная грязная карточка: компания выбирает одно действие — поцелуй, раздевание одного предмета, рука на ляжке, сесть на колени или шёпот на ухо. Выполняешь выбранное или получаешь самый жёсткий штраф вечера."
+    text: "{player.nom}, выбери {randomPlayer.acc}. Финальное действие блока: {randomPlayer.nom} выбирает для тебя одно из четырёх — поцелуй, рука на бедре, снять предмет одежды или сесть ближе. Выполняешь без торговли."
   }
 ];
 
@@ -1925,245 +1925,245 @@ const MINI_GAME_CARDS_001_035 = [
     type: "mini_game",
     title: "Карта пошла",
     timer: 30,
-    text: "Все садятся по кругу, по возможности чередуясь. Первый игрок берёт карту губами и передаёт следующему без рук. На всё есть 30 секунд. Если карта падает — те двое, между кем она упала, целуются. Если круг успели пройти до конца — карта кладётся в центр, и все выпивают. Если время вышло до завершения круга — человек, на ком остановилась карта, целует всех людей противоположного пола в губы, а своего пола — в обе щеки."
+    text: "Все садятся по кругу. Первый игрок берёт карту губами и передаёт следующему без рук. На круг есть 60 секунд. Если карта падает — двое, между кем она упала, целуются в щёку или губы, как решит компания. Потом оба пьют штраф."
   },
   {
     id: "mini_002",
     type: "mini_game",
     title: "Горячее кресло",
     timer: 60,
-    text: "{player.nom} садится в центр внимания. У компании есть 60 секунд, чтобы задавать максимально личные и пошлые вопросы. Один вопрос можно пропустить. Второй пропуск — штраф. Если ответ слишком безопасный, компания имеет право сказать: “не засчитано”."
+    text: "{player.nom} садится в центр. Компания за 60 секунд задаёт ему 5 личных вопросов. Темы: секс, порно, ревность, переписки, бывшие, фантазии. Один вопрос можно пропустить. Второй пропуск — штраф."
   },
   {
     id: "mini_003",
     type: "mini_game",
     title: "Опасная пара",
     timer: null,
-    text: "Компания выбирает двух людей, между которыми сегодня самая подозрительная химия. Они садятся рядом до следующего круга. Один кладёт руку второму на бедро, второй — руку на талию или шею первому. Каждый раз, когда кто-то оправдывается, краснеет или говорит “да вы что” — оба пьют."
+    text: "Компания выбирает двух игроков, между которыми сейчас больше всего напряжения. Они садятся рядом вплотную на 45 секунд. Один держит руку на талии второго, второй держит руку на колене первого. Кто убрал руку — пьёт."
   },
   {
     id: "mini_004",
     type: "mini_game",
     title: "Бутылочка без бутылочки",
     timer: null,
-    text: "{player.nom} закрывает глаза. Компания молча выбирает одного человека. {player.nom} открывает глаза и должен угадать, кого выбрали. Если угадал — целует выбранного человека в губы. Если не угадал — целует в щёку того, на кого указал, и получает штраф."
+    text: "{player.nom} закрывает глаза. Компания выбирает одного игрока. Он касается {player.gen} рукой, дыханием или губами в место выше плеч. {player.nom} должен угадать, кто это был. Не угадал — пьёт штраф."
   },
   {
     id: "mini_005",
     type: "mini_game",
     title: "Слишком близко",
     timer: 45,
-    text: "{player.nom} и {randomPlayer.nom} садятся лицом друг к другу на расстоянии ладони. 45 секунд нельзя смеяться, отворачиваться и комментировать. Можно касаться рук, лица, шеи и талии. Кто первый ломает атмосферу — получает штраф."
+    text: "{player.nom} выбирает {randomPlayer.acc}. Они садятся лицом друг к другу. Каждые 15 секунд двигаются ближе. Говорить и смеяться нельзя. В конце лица должны быть максимально близко. Кто сорвался — пьёт."
   },
   {
     id: "mini_006",
     type: "mini_game",
     title: "Раздень манекен",
     timer: 60,
-    text: "Компания выбирает одного игрока-манекена и одного игрока-стилиста. За 60 секунд стилист должен снять с манекена или расстегнуть три элемента: аксессуар, ремень, пуговицу, кофту, носок, резинку, верхний слой одежды. Всё остаётся в рамках комнаты. Если получилось слишком скромно — оба пьют."
+    text: "Компания выбирает двух игроков. Каждый называет один заметный предмет одежды или аксессуар на другом, который должен исчезнуть до следующего круга. Игрок либо снимает выбранное, либо пьёт штраф."
   },
   {
     id: "mini_007",
     type: "mini_game",
     title: "Дуэль: выдержи взгляд",
     timer: 30,
-    text: "{player.nom} и {randomPlayer.nom}, дуэль. Сядьте напротив друг друга. 30 секунд смотрите в глаза, лица на расстоянии пары сантиметров. Целоваться можно. Смеяться нельзя. Первый, кто отвёл взгляд, засмеялся или начал говорить — проиграл и получает штраф."
+    text: "{player.nom} и {randomPlayer.nom} садятся напротив. 30 секунд смотрят друг другу в глаза. Нельзя говорить, смеяться и отворачиваться. Первый, кто сорвался, пьёт. Если выдержали оба — компания выбирает, кто был убедительнее."
   },
   {
     id: "mini_008",
     type: "mini_game",
     title: "Слепое касание",
     timer: 45,
-    text: "{player.nom} закрывает глаза. Компания выбирает одного человека, который должен прикоснуться к {player.dat} губами, пальцами или дыханием в место выше пояса. У {player.gen} есть 45 секунд, чтобы угадать, кто это был и чем именно коснулся. Не угадал — штраф."
+    text: "{player.nom} должен за 60 секунд сказать три короткие правды: кого из комнаты он бы поцеловал, кто выглядит самым опасным после алкоголя, и какой вопрос про себя он боится услышать. Не ответил на любой пункт — штраф."
   },
   {
     id: "mini_009",
     type: "mini_game",
     title: "Компромат-поза",
     timer: 30,
-    text: "Компания выбирает двух игроков. У них 30 секунд, чтобы принять позу, в которой их было бы стыдно случайно сфотографировать. Руки не должны висеть без дела. Компания голосует: “засчитано” или “слишком слабо”. Если слабо — оба пьют."
+    text: "Компания выбирает двух игроков. За 30 секунд они должны принять позу, в которой их было бы неловко увидеть со стороны. Одежду не снимать. Руки должны быть заняты: талия, плечи, колени или руки. Если поза скучная — оба пьют."
   },
   {
     id: "mini_010",
     type: "mini_game",
     title: "Кто кого хотел бы",
     timer: null,
-    text: "Все одновременно показывают на человека, с которым, по мнению компании, {player.nom} мог бы наделать самых грязных ошибок. Человек, набравший больше всего голосов, садится рядом с {player.inst} до следующего круга. {player.nom} должен сказать, согласен он с выбором или нет."
+    text: "Все одновременно показывают на человека, который, по их мнению, чаще всего думает о сексе. Игрок с большинством голосов выбирает любого человека и говорит ему один прямой комплимент про внешность. Слабый комплимент — штраф."
   },
   {
     id: "mini_011",
     type: "mini_game",
     title: "Ледяная дорожка",
     timer: null,
-    text: "{player.nom} выбирает {randomPlayer.acc}. Компания даёт лёд или холодный предмет. {player.nom} проводит им по шее, руке, ключице или запястью {randomPlayer.gen}. Потом {randomPlayer.nom} делает то же самое с {player.inst}. Кто делает слишком быстро и скучно — пьёт."
+    text: "{player.nom} выбирает {randomPlayer.acc}. Нужно провести холодным предметом по руке, запястью, шее или плечу {randomPlayer.gen}. Потом {randomPlayer.nom} делает то же самое с {player.inst}. Кто делает быстро и скучно — пьёт."
   },
   {
     id: "mini_012",
     type: "mini_game",
     title: "Грязный комплимент",
     timer: 60,
-    text: "Каждый по очереди говорит {player.dat} комплимент, от которого должно стать неловко или жарко. Нельзя говорить про характер, доброту и “красивые глаза” без объяснения. У кого самый слабый комплимент — пьёт."
+    text: "Каждый игрок по очереди говорит {player.dat} один взрослый комплимент. Нельзя говорить про доброту, характер и ум. Только внешность, голос, руки, губы, тело, взгляд или энергия. Самый слабый комплимент выбирает компания. Автор пьёт."
   },
   {
     id: "mini_013",
     type: "mini_game",
     title: "Круг плохих решений",
     timer: 90,
-    text: "По кругу каждый игрок отвечает на вопрос: “С кем из этой комнаты у меня могла бы случиться самая неправильная история?” Имя назвать обязательно. Повторять уже названного человека нельзя. Кто отказывается — штраф."
+    text: "Все закрывают глаза. Каждый показывает пальцем на человека, с которым у {player.gen}, по мнению компании, могла бы случиться самая неправильная история. Потом все открывают глаза. Игрок с большинством голосов садится рядом с {player.inst} до следующей карточки."
   },
   {
     id: "mini_014",
     type: "mini_game",
     title: "Одежда пошла",
     timer: 60,
-    text: "Компания выбирает направление круга. Каждый игрок за 60 секунд должен передать соседу один предмет одежды или аксессуар: ремень, кофту, браслет, носок, резинку, рубашку, шарф. Все надевают полученное поверх своей одежды. Кто выбирает слишком скучно — пьёт."
+    text: "Каждый игрок за 60 секунд отдаёт человеку справа один заметный предмет одежды или аксессуар. Получатель надевает это поверх своей одежды. Слишком мелкая вещь не считается. Кто ничего не отдал — пьёт."
   },
   {
     id: "mini_015",
     type: "mini_game",
     title: "Суд компании",
     timer: null,
-    text: "Компания выбирает самого подозрительного игрока вечера. Этот человек садится в центр и отвечает: “Что обо мне лучше не знать тем, с кем я встречаюсь?” Если ответ скучный или слишком приличный — компания назначает штраф."
+    text: "Компания выбирает самого подозрительного игрока вечера. Он отвечает на вопрос: “Что обо мне лучше не знать человеку, который со мной встречается?” Ответ должен быть конкретный. Слишком безопасный ответ — штраф."
   },
   {
     id: "mini_016",
     type: "mini_game",
     title: "Поцелуйная цепочка",
     timer: 60,
-    text: "За 60 секунд по кругу каждый должен поцеловать следующего игрока туда, куда выберет компания: губы, щёка, шея, рука, запястье. Быстрый сухой чмок не засчитывается. Если круг не успел пройти — человек, на ком остановились, получает штраф."
+    text: "По кругу каждый целует следующего игрока в место, которое выберет компания: рука, щека, плечо, шея или губы. На весь круг 60 секунд. Кто отказывается — пьёт. Кто делает слишком быстро — повторяет."
   },
   {
     id: "mini_017",
     type: "mini_game",
     title: "Тайная метка",
     timer: null,
-    text: "{player.nom} выбирает {randomPlayer.acc} и оставляет на {randomPlayer.prep} “метку”: поцелуй в шею, щёку, руку, запястье или плечо. Компания выбирает место. {randomPlayer.nom} не имеет права стирать или прятать это до следующего круга."
+    text: "{player.nom} выбирает {randomPlayer.acc}. Компания выбирает место выше плеч: рука, щека, шея, плечо или запястье. {player.nom} оставляет там поцелуй. {randomPlayer.nom} не прячет это до следующего круга."
   },
   {
     id: "mini_018",
     type: "mini_game",
     title: "Дуэль: кто соблазнит взглядом",
     timer: 30,
-    text: "{player.nom} и {randomPlayer.nom}, дуэль. 30 секунд вы молча соблазняете друг друга взглядом, позой и руками, не целуясь. Компания выбирает победителя. Проигравший садится к победителю ближе до следующей карточки."
+    text: "{player.nom} и {randomPlayer.nom} встают друг напротив друга. 30 секунд каждый должен соблазнять другого без слов: взгляд, поза, движение, расстояние. Касаться нельзя. Компания выбирает победителя. Проигравший пьёт."
   },
   {
     id: "mini_019",
     type: "mini_game",
     title: "Проверка химии",
     timer: 45,
-    text: "{player.nom} и {randomPlayer.nom} садятся рядом. 45 секунд один держит руку на бедре второго, второй — руку на шее или талии первого. Нельзя смеяться и оправдываться. После таймера компания голосует: “есть химия” или “не верим”. Если “не верим” — оба пьют."
+    text: "{player.nom} и {randomPlayer.nom} садятся рядом. Один держит руку на бедре второго, второй — руку на талии первого. 45 секунд нельзя смеяться и оправдываться. После таймера компания голосует: верим или не верим. Если не верим — оба пьют."
   },
   {
     id: "mini_020",
     type: "mini_game",
     title: "Шёпот грязных мыслей",
     timer: 60,
-    text: "{player.nom} садится в центр. Каждый игрок по очереди шепчет {player.dat} на ухо одну пошлую фразу, комплимент или желание. {player.nom} выбирает самую сильную фразу. Автор самой слабой пьёт."
+    text: "{player.nom} сидит в центре. Каждый игрок по очереди шепчет {player.dat} на ухо одну взрослую фразу: комплимент, желание, подозрение или вопрос. {player.nom} выбирает самую слабую фразу. Её автор пьёт."
   },
   {
     id: "mini_021",
     type: "mini_game",
     title: "Кто спалился",
     timer: null,
-    text: "Все одновременно показывают на человека, который, по мнению компании, чаще всего врёт фразой “мы просто общаемся”. Победитель должен рассказать одну историю, где всё выглядело подозрительно. Отказ — штраф."
+    text: "Все одновременно показывают на человека, который чаще всего делает вид, что он просто общается, хотя там явно флирт. Игрок с большинством голосов должен рассказать одну похожую ситуацию из жизни. Отказ — штраф."
   },
   {
     id: "mini_022",
     type: "mini_game",
     title: "Один предмет лишний",
     timer: null,
-    text: "Компания выбирает двух игроков. Каждый должен назвать один предмет одежды на другом, который сейчас лишний. После этого оба либо снимают названный предмет, либо получают штраф. Если назвали слишком безопасно — компания выбирает сама."
+    text: "{player.nom} выбирает {randomPlayer.acc}. Компания даёт им две команды: одна про позу, одна про руки. Например: “сесть ближе” и “руки на талии”. Они держат это 40 секунд. Кто нарушил — пьёт."
   },
   {
     id: "mini_023",
     type: "mini_game",
     title: "Ванная сцена",
     timer: 90,
-    text: "{player.nom} выбирает {randomPlayer.acc}. Они уходят в ванную на 90 секунд. Там {player.nom} моет {randomPlayer.dat} один палец на руке. После возвращения {player.nom} при всех целует или облизывает этот палец. Если возвращаются без выполнения — оба получают штраф."
+    text: "{player.nom} выбирает {randomPlayer.acc}. Они уходят в ванную на 90 секунд. Там {player.nom} моет {randomPlayer.dat} один палец на руке. После возвращения {player.nom} при всех целует этот палец. Не сделали — оба пьют."
   },
   {
     id: "mini_024",
     type: "mini_game",
     title: "Не трогай — проиграешь",
     timer: 30,
-    text: "{player.nom} и {randomPlayer.nom} садятся очень близко. 30 секунд нельзя отодвигаться. Компания выбирает, где должны лежать руки: бедро, талия, шея, спина или колено. Кто убрал руку первым — проиграл."
+    text: "{player.nom} и {randomPlayer.nom} садятся рядом. Компания выбирает место для руки каждого: плечо, колено, талия, бедро или рука. 30 секунд нельзя убирать контакт. Кто убрал первым — пьёт."
   },
   {
     id: "mini_025",
     type: "mini_game",
     title: "Дуэль: грязная правда",
     timer: null,
-    text: "{player.nom} и {randomPlayer.nom} по очереди отвечают на вопрос: “Что во мне может быть опасным для чужих нервов и чужих отношений?” Компания выбирает, чей ответ честнее. Проигравший пьёт."
+    text: "{player.nom} и {randomPlayer.nom} по очереди отвечают на вопрос: “Что во мне может быть опасным для чужих нервов или отношений?” Компания выбирает, чей ответ честнее. Проигравший пьёт."
   },
   {
     id: "mini_026",
     type: "mini_game",
     title: "Поцелуй на выбор компании",
     timer: null,
-    text: "Компания выбирает двух игроков и место поцелуя: губы, шея, щёка, рука, запястье или плечо. Игроки выполняют. Если кто-то превращает это в шутку или делает слишком быстро — получает штраф."
+    text: "Компания выбирает двух игроков и место поцелуя: рука, щека, шея, плечо или губы. Игроки выполняют. Если место выбрано губы — минимум 5 секунд. Отказ любого игрока — штраф этому игроку."
   },
   {
     id: "mini_027",
     type: "mini_game",
     title: "Смена владельца",
     timer: null,
-    text: "Каждый игрок выбирает один предмет на себе и отдаёт человеку справа. Получатель надевает это поверх одежды. Предмет должен быть заметным. Если кто-то отдаёт слишком мелкую ерунду, компания назначает ему штраф."
+    text: "Каждый игрок выбирает один предмет на себе и отдаёт человеку слева. Получатель надевает это поверх одежды до следующего круга. Предмет должен быть заметным. Кто отдаёт незаметную мелочь — пьёт."
   },
   {
     id: "mini_028",
     type: "mini_game",
     title: "Тело говорит",
     timer: 45,
-    text: "{player.nom} и {randomPlayer.nom} играют сцену без слов: “мы хотим, но не признаёмся”. Можно касаться рук, шеи, талии, лица, бедра поверх одежды. 45 секунд. Если компания не поверила — оба пьют."
+    text: "{player.nom} и {randomPlayer.nom} играют сцену без слов: один зовёт ближе, второй сопротивляется, но всё равно приближается. Можно использовать взгляд, руки, корпус и расстояние. 45 секунд. Если компания не поняла сцену — оба пьют."
   },
   {
     id: "mini_029",
     type: "mini_game",
     title: "Самый опасный после алкоголя",
     timer: null,
-    text: "Все одновременно показывают на человека, который после алкоголя становится самым опасным в плане флирта, поцелуев и плохих решений. Победитель должен выбрать человека и сесть с ним в максимально близкую позу до следующего круга."
+    text: "Все показывают на человека, который после алкоголя становится самым опасным в плане флирта. Игрок с большинством голосов выбирает любого человека и садится с ним вплотную до следующей карточки."
   },
   {
     id: "mini_030",
     type: "mini_game",
     title: "Три касания",
     timer: 30,
-    text: "{player.nom} выбирает {randomPlayer.acc}. За 30 секунд {player.nom} должен сделать три касания: рука, талия или бедро; шея или плечо; лицо или волосы. Всё поверх одежды. Если одно касание выглядит трусливо — штраф."
+    text: "{player.nom} выбирает {randomPlayer.acc}. За 30 секунд нужно сделать три касания поверх одежды: рука или запястье, плечо или шея, талия или колено. Если любое касание сделано быстро и трусливо — штраф."
   },
   {
     id: "mini_031",
     type: "mini_game",
     title: "Снимай или пей",
     timer: null,
-    text: "Компания выбирает одного игрока. Ему называют один предмет одежды или аксессуар. Он либо снимает его до следующего круга, либо пьёт штраф. Если предмет слишком жёсткий, можно заменить, но тогда штраф двойной."
+    text: "Компания выбирает одного игрока. Ему называют один заметный предмет одежды или аксессуар. Он либо снимает его до следующего круга, либо отвечает на один личный вопрос компании. Отказ от обоих вариантов — двойной штраф."
   },
   {
     id: "mini_032",
     type: "mini_game",
     title: "Кто бы с кем",
     timer: null,
-    text: "Каждый игрок по очереди отвечает: “С кем из комнаты у меня был бы самый опасный поцелуй?” Имя обязательно. Кто отказывается назвать имя — пьёт. Кто назвал себя — пьёт дважды."
+    text: "Каждый игрок по очереди отвечает: “С кем из комнаты у меня был бы самый опасный поцелуй?” Имя обязательно. Нельзя называть себя. Кто отказывается — пьёт."
   },
   {
     id: "mini_033",
     type: "mini_game",
     title: "На колени",
     timer: 45,
-    text: "Компания выбирает двух игроков. Один садится на колени ко второму. Кто сверху — решает компания. 45 секунд нужно сидеть так, не оправдываясь и не превращая в цирк. Кто ломает атмосферу — штраф."
+    text: "Компания выбирает двух игроков. Один садится на колени ко второму. Кто сверху — решает компания. 45 секунд нужно сидеть без шуток и оправданий. Руки держать на талии, плечах или коленях. Кто ломает позу — пьёт."
   },
   {
     id: "mini_034",
     type: "mini_game",
     title: "Руки заняты",
     timer: 60,
-    text: "{player.nom} и {randomPlayer.nom} до конца таймера должны держать руки друг на друге: талия, бедро, шея, спина или колено. Каждые 15 секунд компания говорит “смена”, и руки переходят на новое место. Кто тормозит — пьёт."
+    text: "{player.nom} и {randomPlayer.nom} должны 60 секунд держать руки друг на друге. Каждые 15 секунд компания говорит новое место: плечо, рука, талия, колено, бедро. Кто не успел сменить место — пьёт."
   },
   {
     id: "mini_035",
     type: "mini_game",
     title: "Финальный беспредел круга",
     timer: 90,
-    text: "За 90 секунд каждый игрок должен выбрать одного человека и выполнить одно действие: поцелуй, рука на бедре, шёпот на ухо, обмен одеждой или сесть очень близко. Повторять одно и то же действие два раза подряд нельзя. Кто отказывается — получает штраф."
+    text: "За 90 секунд каждый игрок выбирает одного человека и делает одно действие: поцелуй в щёку, рука на талии, шёпот на ухо, обмен вещью или сесть вплотную. Одно и то же действие нельзя повторять два раза подряд. Отказ — штраф."
   }
 ];
 
