@@ -78,6 +78,16 @@ const DEFAULT_PLAYERS = [
     acc: "Олю",
     inst: "Олей",
     prep: "Оле"
+  },
+  {
+    id: "olivia",
+    gender: "female",
+    nom: "Оливия",
+    gen: "Оливии",
+    dat: "Оливии",
+    acc: "Оливию",
+    inst: "Оливией",
+    prep: "Оливии"
   }
 ];
 
