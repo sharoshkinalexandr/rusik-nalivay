@@ -1,4 +1,4 @@
-const CACHE_NAME = "rusik-nalivay-v8";
+const CACHE_NAME = "rusik-nalivay-v9";
 const APP_SHELL = [
   "./",
   "./index.html",
