@@ -12,6 +12,8 @@ const STORAGE_KEYS = {
   usedChaosCards: "usedChaosCards",
   selectedPlayers: "selectedPlayers",
   customPlayers: "customPlayers",
+  selectedGameMode: "selectedGameMode",
+  customGameModeTypes: "customGameModeTypes",
   gameStats: "gameStats",
   storageVersion: "storageVersion"
 };
@@ -25,6 +27,92 @@ const EXPECTED_CARD_COUNTS = {
   mini_game: 35,
   chaos: 15
 };
+const CARD_TYPES = ["action", "truth", "never", "mini_game", "chaos"];
+const DEFAULT_CUSTOM_GAME_MODE_TYPES = ["action", "truth", "never", "mini_game"];
+const GAME_MODE_ORDER = [
+  "all",
+  "truth_or_action",
+  "truth_only",
+  "never_only",
+  "mini_games_only",
+  "chaos_only",
+  "custom"
+];
+const GAME_MODES = {
+  all: {
+    id: "all",
+    title: "Все карточки",
+    description: "Действия, правда, я никогда не, мини-игры и редкий хаос.",
+    cardTypes: ["action", "truth", "never", "mini_game", "chaos"],
+    weights: {
+      action: 55,
+      truth: 18,
+      never: 10,
+      mini_game: 12,
+      chaos: 5
+    }
+  },
+  truth_or_action: {
+    id: "truth_or_action",
+    title: "Правда или действие",
+    description: "Только правда и действия.",
+    cardTypes: ["action", "truth"],
+    weights: {
+      action: 60,
+      truth: 40
+    }
+  },
+  truth_only: {
+    id: "truth_only",
+    title: "Только правда",
+    description: "Только личные вопросы.",
+    cardTypes: ["truth"],
+    weights: {
+      truth: 100
+    }
+  },
+  never_only: {
+    id: "never_only",
+    title: "Я никогда не...",
+    description: "Только карточки “Я никогда не”.",
+    cardTypes: ["never"],
+    weights: {
+      never: 100
+    }
+  },
+  mini_games_only: {
+    id: "mini_games_only",
+    title: "Мини-игры",
+    description: "Только мини-игры для компании.",
+    cardTypes: ["mini_game"],
+    weights: {
+      mini_game: 100
+    }
+  },
+  chaos_only: {
+    id: "chaos_only",
+    title: "Хаос",
+    description: "Только штрафные и хаос-карточки.",
+    cardTypes: ["chaos"],
+    weights: {
+      chaos: 100
+    }
+  },
+  custom: {
+    id: "custom",
+    title: "Свой набор",
+    description: "Игрок сам выбирает, какие типы карточек включить.",
+    cardTypes: [],
+    weights: {}
+  }
+};
+const CARD_TYPE_OPTIONS = [
+  { type: "action", title: "Действия" },
+  { type: "truth", title: "Правда" },
+  { type: "never", title: "Я никогда не..." },
+  { type: "mini_game", title: "Мини-игры" },
+  { type: "chaos", title: "Хаос" }
+];
 const TIMER_SOUND_FILE = "./sounds/timer-end.mp3";
 const TIMER_END_VIBRATION = [300, 150, 300, 150, 500];
 const TIMER_FALLBACK_TONES = [
@@ -49,6 +137,8 @@ let state = {
   usedCards: [],
   usedChaosCards: [],
   selectedPlayers: [],
+  selectedGameMode: "all",
+  customGameModeTypes: [...DEFAULT_CUSTOM_GAME_MODE_TYPES],
   gameStats: { ...DEFAULT_STATS }
 };
 
@@ -100,6 +190,40 @@ function renderStartScreen() {
   document.getElementById("startButton").addEventListener("click", renderPlayersScreen);
 }
 
+function renderGameModeSelector() {
+  const selectedMode = getSelectedGameMode();
+  const customTypes = new Set(getCustomGameModeTypes());
+  const modeOptions = GAME_MODE_ORDER.map((modeId) => {
+    const mode = GAME_MODES[modeId];
+
+    return `
+      <label class="game-mode-option">
+        <input type="radio" name="game-mode" value="${escapeHtml(mode.id)}" ${selectedMode === mode.id ? "checked" : ""}>
+        <span>
+          <strong>${escapeHtml(mode.title)}</strong>
+          <small>${escapeHtml(mode.description)}</small>
+        </span>
+      </label>
+    `;
+  }).join("");
+  const customOptions = CARD_TYPE_OPTIONS.map((option) => `
+    <label>
+      <input type="checkbox" name="custom-game-type" value="${escapeHtml(option.type)}" ${customTypes.has(option.type) ? "checked" : ""}>
+      ${escapeHtml(option.title)}
+    </label>
+  `).join("");
+
+  return `
+    <div class="game-mode-box">
+      <h3>Выбери игру</h3>
+      ${modeOptions}
+      <div id="custom-mode-options" class="custom-mode-options ${selectedMode === "custom" ? "" : "hidden"}">
+        ${customOptions}
+      </div>
+    </div>
+  `;
+}
+
 function renderPlayersScreen() {
   closeMenu();
   pauseTimer();
@@ -139,6 +263,7 @@ function renderPlayersScreen() {
         <p id="custom-player-message" class="custom-player-message"></p>
         <button id="reset-custom-players-button" class="ghost" type="button">Сбросить добавленных игроков</button>
       </div>
+      ${renderGameModeSelector()}
       <p class="hint" id="playersHint">Выберите минимум двух игроков</p>
       <div class="button-row two">
         <button class="secondary" id="selectAllButton" type="button">Выбрать всех</button>
@@ -155,29 +280,54 @@ function renderPlayersScreen() {
   const hint = document.getElementById("playersHint");
   const playerCount = document.getElementById("playerCount");
   const customNameInput = document.getElementById("custom-player-name");
+  const modeRadios = [...document.querySelectorAll("input[name='game-mode']")];
+  const customModeOptions = document.getElementById("custom-mode-options");
+  const customTypeCheckboxes = [...document.querySelectorAll("input[name='custom-game-type']")];
 
-  function syncPlayers() {
+  function syncSetupState() {
     const selected = checkboxes.filter((box) => box.checked).map((box) => box.value);
+    const selectedModeInput = modeRadios.find((box) => box.checked);
+    const selectedMode = saveSelectedGameMode(selectedModeInput ? selectedModeInput.value : "all");
+    const selectedCustomTypes = customTypeCheckboxes.filter((box) => box.checked).map((box) => box.value);
+
     saveSelectedPlayers(selected);
+    saveCustomGameModeTypes(selectedCustomTypes);
     playerCount.textContent = `${selected.length} выбрано`;
-    playButton.disabled = selected.length < 2;
-    hint.textContent = selected.length < 2
-      ? "Выберите минимум двух игроков"
-      : "Готово. Можно начинать.";
+
+    if (customModeOptions) {
+      customModeOptions.classList.toggle("hidden", selectedMode !== "custom");
+    }
+
+    if (selected.length < 2) {
+      playButton.disabled = true;
+      hint.textContent = "Выберите минимум двух игроков";
+      return;
+    }
+
+    if (selectedMode === "custom" && selectedCustomTypes.length === 0) {
+      playButton.disabled = true;
+      hint.textContent = "Выберите хотя бы один тип карточек";
+      return;
+    }
+
+    playButton.disabled = false;
+    hint.textContent = `Готово. Режим: ${getActiveGameMode().title}.`;
   }
 
-  checkboxes.forEach((box) => box.addEventListener("change", syncPlayers));
+  checkboxes.forEach((box) => box.addEventListener("change", syncSetupState));
+  modeRadios.forEach((box) => box.addEventListener("change", syncSetupState));
+  customTypeCheckboxes.forEach((box) => box.addEventListener("change", syncSetupState));
   document.getElementById("selectAllButton").addEventListener("click", () => {
     checkboxes.forEach((box) => {
       box.checked = true;
     });
-    syncPlayers();
+    syncSetupState();
   });
   document.getElementById("clearAllButton").addEventListener("click", () => {
     checkboxes.forEach((box) => {
       box.checked = false;
     });
-    syncPlayers();
+    syncSetupState();
   });
   document.getElementById("add-custom-player-button").addEventListener("click", addCustomPlayer);
   document.getElementById("reset-custom-players-button").addEventListener("click", resetCustomPlayers);
@@ -195,10 +345,14 @@ function renderPlayersScreen() {
       hint.textContent = "Выберите минимум двух игроков";
       return;
     }
+    if (getActiveGameMode().cardTypes.length === 0) {
+      hint.textContent = "Выберите хотя бы один тип карточек";
+      return;
+    }
     showNextCard();
   });
 
-  syncPlayers();
+  syncSetupState();
 }
 
 function renderGameScreen(card) {
@@ -208,20 +362,25 @@ function renderGameScreen(card) {
   currentPenaltyCard = null;
   setupTimerForCard(card);
 
+  const mode = getActiveGameMode();
   const remaining = getRemainingMainCardsCount();
-  const shown = state.usedCards.length;
-  const total = getTotalMainCardsCount();
+  const shown = getCurrentModeUsedCardsCount();
+  const total = getCurrentModeTotalCards();
 
   app.innerHTML = `
     <section class="screen">
       <div class="topline">
-        <span>Карточка: ${shown} / ${total}</span>
+        <span>Игра: ${escapeHtml(mode.title)}</span>
         <button class="ghost" id="menuButton" type="button">Меню</button>
       </div>
       <article class="card-shell" id="activeCard">
         <div class="stats-grid">
           <div class="stat">
-            <span>Осталось</span>
+            <span>Карточка режима</span>
+            <strong>${shown} / ${total}</strong>
+          </div>
+          <div class="stat">
+            <span>Осталось в режиме</span>
             <strong>${remaining}</strong>
           </div>
           <div class="stat">
@@ -292,27 +451,30 @@ function renderFinishedScreen() {
   closeMenu();
   pauseTimer();
   currentScreen = SCREENS.FINISHED;
+  const mode = getActiveGameMode();
 
   app.innerHTML = `
     <section class="screen">
       <div class="empty-state">
-        <p class="card-type">Финиш базы</p>
-        <h1>Карточки закончились</h1>
-        <p class="subtitle">Вы прошли всю базу. Можно перемешать всё заново или сбросить историю.</p>
+        <p class="card-type">${escapeHtml(mode.title)}</p>
+        <h1>Карточки этого режима закончились</h1>
+        <p class="subtitle">Можно перемешать только этот режим, выбрать другую игру или сбросить всю историю карточек.</p>
       </div>
       ${renderStatsList()}
       <div class="button-row">
-        <button class="primary" id="reshuffleButton" type="button">Перемешать заново</button>
-        <button class="secondary" id="resetHistoryButton" type="button">Сбросить историю</button>
+        <button class="primary" id="reshuffleButton" type="button">Перемешать этот режим заново</button>
+        <button class="secondary" id="chooseModeButton" type="button">Выбрать другую игру</button>
+        <button class="secondary" id="resetHistoryButton" type="button">Сбросить всю историю</button>
         <button class="ghost" id="finishGameButton" type="button">Закончить игру</button>
       </div>
     </section>
   `;
 
   document.getElementById("reshuffleButton").addEventListener("click", () => {
-    resetUsedCards();
+    resetUsedCardsForCurrentMode();
     showNextCard();
   });
+  document.getElementById("chooseModeButton").addEventListener("click", renderPlayersScreen);
   document.getElementById("resetHistoryButton").addEventListener("click", () => {
     resetHistoryOnly();
     showNextCard();
@@ -393,6 +555,96 @@ function getSelectedPlayers() {
 function saveSelectedPlayers(players) {
   state.selectedPlayers = normalizeSelectedPlayers(players);
   saveGameState();
+}
+
+function getSelectedGameMode() {
+  return GAME_MODES[state.selectedGameMode] ? state.selectedGameMode : "all";
+}
+
+function saveSelectedGameMode(modeId) {
+  const normalizedModeId = GAME_MODES[modeId] ? modeId : "all";
+  state.selectedGameMode = normalizedModeId;
+  saveGameState();
+  return normalizedModeId;
+}
+
+function getCustomGameModeTypes() {
+  return normalizeGameModeTypes(state.customGameModeTypes, [...DEFAULT_CUSTOM_GAME_MODE_TYPES], true);
+}
+
+function saveCustomGameModeTypes(types) {
+  state.customGameModeTypes = normalizeGameModeTypes(types, [], true);
+  saveGameState();
+  return state.customGameModeTypes;
+}
+
+function normalizeGameModeTypes(types, fallback = [], allowEmpty = false) {
+  if (!Array.isArray(types)) {
+    return [...fallback];
+  }
+
+  const uniqueTypes = [];
+  types.forEach((type) => {
+    if (CARD_TYPES.includes(type) && !uniqueTypes.includes(type)) {
+      uniqueTypes.push(type);
+    }
+  });
+
+  if (!uniqueTypes.length && !allowEmpty) {
+    return [...fallback];
+  }
+
+  return uniqueTypes;
+}
+
+function getSavedSelectedGameMode() {
+  try {
+    const rawValue = localStorage.getItem(STORAGE_KEYS.selectedGameMode);
+    const modeId = rawValue ? rawValue.replaceAll('"', "") : "all";
+    return GAME_MODES[modeId] ? modeId : "all";
+  } catch (error) {
+    console.warn("Failed to load selected game mode:", error);
+    return "all";
+  }
+}
+
+function getSavedCustomGameModeTypes() {
+  try {
+    const rawValue = localStorage.getItem(STORAGE_KEYS.customGameModeTypes);
+
+    if (!rawValue) {
+      return [...DEFAULT_CUSTOM_GAME_MODE_TYPES];
+    }
+
+    const parsed = JSON.parse(rawValue);
+    return normalizeGameModeTypes(parsed, [...DEFAULT_CUSTOM_GAME_MODE_TYPES], true);
+  } catch (error) {
+    console.warn("Failed to load custom game mode types:", error);
+    return ["action", "truth"];
+  }
+}
+
+function getActiveGameMode() {
+  const mode = GAME_MODES[getSelectedGameMode()] || GAME_MODES.all;
+
+  if (mode.id !== "custom") {
+    return mode;
+  }
+
+  const selectedTypes = getCustomGameModeTypes();
+  const weights = {};
+
+  selectedTypes.forEach((type) => {
+    weights[type] = 100 / selectedTypes.length;
+  });
+
+  return {
+    id: "custom",
+    title: "Свой набор",
+    description: "Пользовательский набор карточек.",
+    cardTypes: selectedTypes,
+    weights
+  };
 }
 
 function getCustomPlayers() {
@@ -790,17 +1042,36 @@ function resetCustomPlayers() {
 }
 
 function pickWeightedCardType() {
-  const availableTypes = Object.keys(CARD_WEIGHTS).filter((type) => getAvailableCards(type).length > 0);
+  return selectCardTypeForMode();
+}
+
+function getAvailableCardsForMode() {
+  const mode = getActiveGameMode();
+  const availableCardsByType = {};
+
+  mode.cardTypes.forEach((type) => {
+    availableCardsByType[type] = getAvailableCards(type);
+  });
+
+  return availableCardsByType;
+}
+
+function selectCardTypeForMode() {
+  const mode = getActiveGameMode();
+  const availableCardsByType = getAvailableCardsForMode();
+  const availableTypes = mode.cardTypes.filter((type) => (
+    availableCardsByType[type] && availableCardsByType[type].length > 0
+  ));
 
   if (!availableTypes.length) {
     return null;
   }
 
-  const totalWeight = availableTypes.reduce((sum, type) => sum + CARD_WEIGHTS[type], 0);
+  const totalWeight = availableTypes.reduce((sum, type) => sum + (mode.weights[type] || 1), 0);
   let roll = Math.random() * totalWeight;
 
   for (const type of availableTypes) {
-    roll -= CARD_WEIGHTS[type];
+    roll -= mode.weights[type] || 1;
     if (roll <= 0) {
       return type;
     }
@@ -821,13 +1092,7 @@ function pickNextCard() {
     return null;
   }
 
-  let available = getAvailableCards(weightedType);
-
-  if (!available.length) {
-    const fallbackType = Object.keys(GAME_CARDS).find((type) => getAvailableCards(type).length > 0);
-    available = fallbackType ? getAvailableCards(fallbackType) : [];
-  }
-
+  const available = getAvailableCards(weightedType);
   return pickRandom(available) || null;
 }
 
@@ -849,11 +1114,34 @@ function resetUsedCards() {
   saveGameState();
 }
 
+function resetUsedCardsForCurrentMode() {
+  const activeCardIds = getCurrentModeCardIds();
+  state.usedCards = getUsedCards().filter((cardId) => !activeCardIds.has(cardId));
+  saveGameState();
+}
+
+function getCurrentModeCardIds() {
+  const mode = getActiveGameMode();
+  const activeCardIds = new Set();
+
+  mode.cardTypes.forEach((type) => {
+    const cards = GAME_CARDS[type] || [];
+    cards.forEach((card) => activeCardIds.add(card.id));
+  });
+
+  return activeCardIds;
+}
+
 function showNextCard() {
   closeMenu();
   pauseTimer();
 
   if (getSelectedPlayers().length < 2) {
+    renderPlayersScreen();
+    return;
+  }
+
+  if (getActiveGameMode().cardTypes.length === 0) {
     renderPlayersScreen();
     return;
   }
@@ -1027,12 +1315,20 @@ function saveGameState() {
   writeStorage(STORAGE_KEYS.usedCards, state.usedCards);
   writeStorage(STORAGE_KEYS.usedChaosCards, state.usedChaosCards);
   writeStorage(STORAGE_KEYS.selectedPlayers, state.selectedPlayers);
+  try {
+    localStorage.setItem(STORAGE_KEYS.selectedGameMode, getSelectedGameMode());
+    localStorage.setItem(STORAGE_KEYS.customGameModeTypes, JSON.stringify(getCustomGameModeTypes()));
+  } catch (error) {
+    console.warn("Failed to save game mode:", error);
+  }
   writeStorage(STORAGE_KEYS.gameStats, state.gameStats);
   writeStorage(STORAGE_KEYS.storageVersion, STORAGE_VERSION);
 }
 
 function loadGameState() {
   const selectedPlayers = normalizeSelectedPlayers(readStorage(STORAGE_KEYS.selectedPlayers, []));
+  const selectedGameMode = getSavedSelectedGameMode();
+  const customGameModeTypes = getSavedCustomGameModeTypes();
   const storedVersion = readStorage(STORAGE_KEYS.storageVersion, null);
 
   if (storedVersion !== STORAGE_VERSION) {
@@ -1040,6 +1336,8 @@ function loadGameState() {
       usedCards: [],
       usedChaosCards: [],
       selectedPlayers,
+      selectedGameMode,
+      customGameModeTypes,
       gameStats: { ...DEFAULT_STATS }
     };
     saveGameState();
@@ -1050,6 +1348,8 @@ function loadGameState() {
     usedCards: readStorage(STORAGE_KEYS.usedCards, []),
     usedChaosCards: readStorage(STORAGE_KEYS.usedChaosCards, []),
     selectedPlayers,
+    selectedGameMode,
+    customGameModeTypes,
     gameStats: {
       ...DEFAULT_STATS,
       ...readStorage(STORAGE_KEYS.gameStats, {})
@@ -1061,6 +1361,8 @@ function resetGameState() {
   state.usedCards = [];
   state.usedChaosCards = [];
   state.selectedPlayers = [];
+  state.selectedGameMode = "all";
+  state.customGameModeTypes = [...DEFAULT_CUSTOM_GAME_MODE_TYPES];
   state.gameStats = { ...DEFAULT_STATS };
   saveGameState();
 }
@@ -1303,11 +1605,25 @@ function resetHistoryOnly() {
 }
 
 function getTotalMainCardsCount() {
-  return Object.values(GAME_CARDS).reduce((sum, cards) => sum + cards.length, 0);
+  return getCurrentModeTotalCards();
 }
 
 function getRemainingMainCardsCount() {
-  return Math.max(0, getTotalMainCardsCount() - state.usedCards.length);
+  return Math.max(0, getCurrentModeTotalCards() - getCurrentModeUsedCardsCount());
+}
+
+function getCurrentModeTotalCards() {
+  const mode = getActiveGameMode();
+
+  return mode.cardTypes.reduce((sum, type) => {
+    const cards = GAME_CARDS[type] || [];
+    return sum + cards.length;
+  }, 0);
+}
+
+function getCurrentModeUsedCardsCount() {
+  const activeCardIds = getCurrentModeCardIds();
+  return getUsedCards().filter((cardId) => activeCardIds.has(cardId)).length;
 }
 
 function setupTimerForCard(card) {
