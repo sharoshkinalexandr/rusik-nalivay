@@ -14,6 +14,7 @@ const STORAGE_KEYS = {
   customPlayers: "customPlayers",
   selectedGameMode: "selectedGameMode",
   customGameModeTypes: "customGameModeTypes",
+  activePlayerTurnIndex: "activePlayerTurnIndex",
   gameStats: "gameStats",
   storageVersion: "storageVersion"
 };
@@ -139,6 +140,7 @@ let state = {
   selectedPlayers: [],
   selectedGameMode: "all",
   customGameModeTypes: [...DEFAULT_CUSTOM_GAME_MODE_TYPES],
+  activePlayerTurnIndex: 0,
   gameStats: { ...DEFAULT_STATS }
 };
 
@@ -146,6 +148,9 @@ let currentScreen = SCREENS.START;
 let previousScreen = SCREENS.START;
 let currentCard = null;
 let currentPenaltyCard = null;
+let currentPlayer = null;
+let currentRandomPlayer = null;
+let currentRandomPlayer2 = null;
 let menuConfirmReset = false;
 
 let timerInterval = null;
@@ -349,6 +354,8 @@ function renderPlayersScreen() {
       hint.textContent = "Выберите хотя бы один тип карточек";
       return;
     }
+    resetActivePlayerTurnQueue();
+    normalizeActivePlayerTurnIndex();
     showNextCard();
   });
 
@@ -363,6 +370,8 @@ function renderGameScreen(card) {
   setupTimerForCard(card);
 
   const mode = getActiveGameMode();
+  const selectedPlayers = getSelectedPlayerObjects();
+  const turnNumber = getDisplayedTurnNumber(selectedPlayers);
   const remaining = getRemainingMainCardsCount();
   const shown = getCurrentModeUsedCardsCount();
   const total = getCurrentModeTotalCards();
@@ -386,6 +395,10 @@ function renderGameScreen(card) {
           <div class="stat">
             <span>Активный игрок</span>
             <strong>${escapeHtml(card.activePlayer)}</strong>
+          </div>
+          <div class="stat">
+            <span>Ход игрока</span>
+            <strong>${turnNumber} / ${selectedPlayers.length}</strong>
           </div>
         </div>
         <div>
@@ -554,7 +567,87 @@ function getSelectedPlayers() {
 
 function saveSelectedPlayers(players) {
   state.selectedPlayers = normalizeSelectedPlayers(players);
+  normalizeActivePlayerTurnIndex(false);
   saveGameState();
+}
+
+function loadActivePlayerTurnIndex() {
+  try {
+    const rawValue = localStorage.getItem(STORAGE_KEYS.activePlayerTurnIndex);
+    const parsed = Number(rawValue);
+
+    if (!Number.isInteger(parsed) || parsed < 0) {
+      return 0;
+    }
+
+    return parsed;
+  } catch (error) {
+    console.warn("Failed to load active player turn index:", error);
+    return 0;
+  }
+}
+
+function getActivePlayerTurnIndex() {
+  const index = Number(state.activePlayerTurnIndex);
+  return Number.isInteger(index) && index >= 0 ? index : 0;
+}
+
+function saveActivePlayerTurnIndex(index) {
+  state.activePlayerTurnIndex = Number.isInteger(index) && index >= 0 ? index : 0;
+
+  try {
+    localStorage.setItem(STORAGE_KEYS.activePlayerTurnIndex, String(state.activePlayerTurnIndex));
+  } catch (error) {
+    console.warn("Failed to save active player turn index:", error);
+  }
+}
+
+function normalizeActivePlayerTurnIndex(shouldSave = true) {
+  const players = getSelectedPlayerObjects();
+  const currentIndex = getActivePlayerTurnIndex();
+  let nextIndex = currentIndex;
+
+  if (!players.length || currentIndex >= players.length) {
+    nextIndex = 0;
+  }
+
+  state.activePlayerTurnIndex = nextIndex;
+
+  if (shouldSave && nextIndex !== currentIndex) {
+    saveActivePlayerTurnIndex(nextIndex);
+  }
+}
+
+function resetActivePlayerTurnQueue() {
+  saveActivePlayerTurnIndex(0);
+}
+
+function getNextActivePlayer() {
+  const players = getSelectedPlayerObjects();
+
+  if (!players.length) {
+    saveActivePlayerTurnIndex(0);
+    return null;
+  }
+
+  normalizeActivePlayerTurnIndex(false);
+  const index = getActivePlayerTurnIndex();
+  const player = players[index] || players[0];
+  const nextIndex = (index + 1) % players.length;
+
+  saveActivePlayerTurnIndex(nextIndex);
+  return player;
+}
+
+function getDisplayedTurnNumber(players) {
+  const selectedPlayers = Array.isArray(players) ? players.filter(Boolean) : getSelectedPlayerObjects();
+
+  if (!selectedPlayers.length) {
+    return 0;
+  }
+
+  const index = getActivePlayerTurnIndex();
+  return index === 0 ? selectedPlayers.length : Math.min(index, selectedPlayers.length);
 }
 
 function getSelectedGameMode() {
@@ -679,6 +772,7 @@ function refreshPlayers(shouldRender = true) {
   const existingIds = new Set(PLAYERS.map((player) => player.id));
   state.selectedPlayers = normalizeSelectedPlayers(state.selectedPlayers)
     .filter((playerId) => existingIds.has(playerId));
+  normalizeActivePlayerTurnIndex(false);
   saveGameState();
 
   if (shouldRender && currentScreen === SCREENS.PLAYERS) {
@@ -704,10 +798,8 @@ function normalizeSelectedPlayers(players) {
 }
 
 function getSelectedPlayerObjects() {
-  const playerMap = new Map(getAllPlayers().map((player) => [player.id, player]));
-  return getSelectedPlayers()
-    .map((playerId) => playerMap.get(playerId))
-    .filter(Boolean);
+  const selectedIds = new Set(getSelectedPlayers());
+  return getAllPlayers().filter((player) => selectedIds.has(player.id));
 }
 
 function getPlayerByReference(playerReference) {
@@ -851,6 +943,83 @@ function isRareLeraMalePair(first, second) {
   }
 
   return true;
+}
+
+function isPairAllowedByLeraRule(first, second, allowRareLeraMalePair) {
+  const firstIsLera = first && first.id === "lera";
+  const secondIsLera = second && second.id === "lera";
+
+  if (!firstIsLera && !secondIsLera) {
+    return true;
+  }
+
+  const other = firstIsLera ? second : first;
+
+  if (!other || other.gender !== "male") {
+    return true;
+  }
+
+  if (other.id === "sasha") {
+    return true;
+  }
+
+  return allowRareLeraMalePair;
+}
+
+function selectPartnerForActivePlayer(activePlayer, availablePlayers) {
+  const active = getPlayerByReference(activePlayer);
+  const players = (Array.isArray(availablePlayers) ? availablePlayers : getSelectedPlayerObjects())
+    .filter((player) => player && (!active || player.id !== active.id));
+
+  if (!active) {
+    return getRandomArrayItem(players) || null;
+  }
+
+  if (!players.length) {
+    return active;
+  }
+
+  const allowRareLeraMalePair = Math.random() < 0.01;
+  let candidates = players.filter((candidate) => (
+    isPairAllowedByLeraRule(active, candidate, allowRareLeraMalePair)
+  ));
+
+  if (!candidates.length) {
+    candidates = players;
+  }
+
+  const femaleCandidates = candidates.filter((candidate) => candidate.gender === "female");
+  const maleCandidates = candidates.filter((candidate) => candidate.gender === "male");
+
+  if (active.gender === "male") {
+    if (femaleCandidates.length > 0 && maleCandidates.length > 0) {
+      return Math.random() < 0.10
+        ? getRandomArrayItem(maleCandidates)
+        : getRandomArrayItem(femaleCandidates);
+    }
+
+    if (femaleCandidates.length > 0) {
+      return getRandomArrayItem(femaleCandidates);
+    }
+
+    return getRandomArrayItem(maleCandidates) || getRandomArrayItem(candidates) || active;
+  }
+
+  if (active.gender === "female") {
+    if (femaleCandidates.length > 0 && maleCandidates.length > 0) {
+      return Math.random() < 0.70
+        ? getRandomArrayItem(femaleCandidates)
+        : getRandomArrayItem(maleCandidates);
+    }
+
+    if (femaleCandidates.length > 0) {
+      return getRandomArrayItem(femaleCandidates);
+    }
+
+    return getRandomArrayItem(maleCandidates) || getRandomArrayItem(candidates) || active;
+  }
+
+  return getRandomArrayItem(candidates) || active;
 }
 
 function getWeightedRandomCategory(items) {
@@ -1028,6 +1197,7 @@ function removeCustomPlayer(playerId) {
   saveCustomPlayers(customPlayers);
 
   state.selectedPlayers = getSelectedPlayers().filter((id) => id !== playerId);
+  normalizeActivePlayerTurnIndex(false);
   saveGameState();
   refreshPlayers();
 }
@@ -1037,6 +1207,7 @@ function resetCustomPlayers() {
 
   const defaultIds = new Set(DEFAULT_PLAYERS.map((player) => player.id));
   state.selectedPlayers = getSelectedPlayers().filter((id) => defaultIds.has(id));
+  normalizeActivePlayerTurnIndex(false);
   saveGameState();
   refreshPlayers();
 }
@@ -1153,7 +1324,14 @@ function showNextCard() {
     return;
   }
 
-  const card = prepareCardForDisplay(rawCard);
+  const activePlayer = getNextActivePlayer();
+
+  if (!activePlayer) {
+    renderPlayersScreen();
+    return;
+  }
+
+  const card = prepareCardForDisplay(rawCard, activePlayer);
   markCardAsUsed(card);
   renderGameScreen(card);
 }
@@ -1315,6 +1493,7 @@ function saveGameState() {
   writeStorage(STORAGE_KEYS.usedCards, state.usedCards);
   writeStorage(STORAGE_KEYS.usedChaosCards, state.usedChaosCards);
   writeStorage(STORAGE_KEYS.selectedPlayers, state.selectedPlayers);
+  writeStorage(STORAGE_KEYS.activePlayerTurnIndex, getActivePlayerTurnIndex());
   try {
     localStorage.setItem(STORAGE_KEYS.selectedGameMode, getSelectedGameMode());
     localStorage.setItem(STORAGE_KEYS.customGameModeTypes, JSON.stringify(getCustomGameModeTypes()));
@@ -1329,6 +1508,7 @@ function loadGameState() {
   const selectedPlayers = normalizeSelectedPlayers(readStorage(STORAGE_KEYS.selectedPlayers, []));
   const selectedGameMode = getSavedSelectedGameMode();
   const customGameModeTypes = getSavedCustomGameModeTypes();
+  const activePlayerTurnIndex = loadActivePlayerTurnIndex();
   const storedVersion = readStorage(STORAGE_KEYS.storageVersion, null);
 
   if (storedVersion !== STORAGE_VERSION) {
@@ -1338,8 +1518,10 @@ function loadGameState() {
       selectedPlayers,
       selectedGameMode,
       customGameModeTypes,
+      activePlayerTurnIndex,
       gameStats: { ...DEFAULT_STATS }
     };
+    normalizeActivePlayerTurnIndex(false);
     saveGameState();
     return;
   }
@@ -1350,11 +1532,13 @@ function loadGameState() {
     selectedPlayers,
     selectedGameMode,
     customGameModeTypes,
+    activePlayerTurnIndex,
     gameStats: {
       ...DEFAULT_STATS,
       ...readStorage(STORAGE_KEYS.gameStats, {})
     }
   };
+  normalizeActivePlayerTurnIndex(false);
 }
 
 function resetGameState() {
@@ -1363,6 +1547,7 @@ function resetGameState() {
   state.selectedPlayers = [];
   state.selectedGameMode = "all";
   state.customGameModeTypes = [...DEFAULT_CUSTOM_GAME_MODE_TYPES];
+  state.activePlayerTurnIndex = 0;
   state.gameStats = { ...DEFAULT_STATS };
   saveGameState();
 }
@@ -1486,22 +1671,15 @@ function registerServiceWorker() {
 
 function prepareCardForDisplay(card, preferredPlayer) {
   const availablePlayers = getSelectedPlayerObjects();
-  let activePlayer;
-  let randomPlayer;
-
-  if (preferredPlayer) {
-    activePlayer = getPlayerByReference(preferredPlayer) || getRandomPlayer(availablePlayers);
-    randomPlayer = getRandomOtherPlayer(activePlayer, availablePlayers);
-  } else if (cardNeedsPair(card)) {
-    const pair = selectPairForCard(availablePlayers);
-    activePlayer = pair.player || getRandomPlayer(availablePlayers);
-    randomPlayer = pair.randomPlayer || getRandomOtherPlayer(activePlayer, availablePlayers);
-  } else {
-    activePlayer = getRandomPlayer(availablePlayers);
-    randomPlayer = getRandomOtherPlayer(activePlayer, availablePlayers);
-  }
+  const activePlayer = getPlayerByReference(preferredPlayer) || getRandomPlayer(availablePlayers);
+  const randomPlayer = cardNeedsPair(card)
+    ? selectPartnerForActivePlayer(activePlayer, availablePlayers)
+    : getRandomOtherPlayer(activePlayer, availablePlayers);
 
   const randomPlayer2 = getRandomThirdPlayer(activePlayer, randomPlayer, availablePlayers);
+  currentPlayer = activePlayer;
+  currentRandomPlayer = randomPlayer;
+  currentRandomPlayer2 = randomPlayer2;
   const resolvedText = resolveCardTemplate(card.text, {
     player: getPlayerForms(activePlayer),
     randomPlayer: getPlayerForms(randomPlayer),
